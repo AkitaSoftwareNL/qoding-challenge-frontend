@@ -4,11 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
+import { OpenQuestionComponent } from './open-question/open-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent
+    OpenQuestionComponent
   ],
   imports: [
     BrowserModule,

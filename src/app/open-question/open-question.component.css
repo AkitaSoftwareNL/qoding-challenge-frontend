@@ -1,10 +1,10 @@
-.app-question {
+.app-open-question {
   color: white;
   display: flex;
   flex-direction: column;
 }
 
-.app-question * {
+.app-open-question * {
   width: 100%;
   padding: 1ex 0ex;
   margin: 0.5ex 0ex;
@@ -12,7 +12,7 @@
   border: none;
 }
 
-.app-question textarea {
+.app-open-question textarea {
   resize: none;
   text-align: left;
 }
