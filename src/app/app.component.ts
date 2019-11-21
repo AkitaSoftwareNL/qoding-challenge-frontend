@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { QuestionsApi } from 'src/api/questions.api';
-import { Question } from 'src/classes/question';
-
 
 @Component({
   selector: 'app-root',
