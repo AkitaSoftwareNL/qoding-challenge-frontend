@@ -15,7 +15,12 @@
   transition: opacity .2s;
 }
 
+.app-open-question>button {
+  padding: 1em 0ex;
+}
+
 .app-open-question textarea {
+  font-size: 1em;
   resize: none;
   text-align: left;
   padding: 1em;
