@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QuestionComponent } from './question/question.component';
 import { OpenQuestionComponent } from './open-question/open-question.component';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { OpenQuestionComponent } from './open-question/open-question.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

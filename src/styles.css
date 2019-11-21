@@ -8,6 +8,7 @@
   --primary-text-color: #FFFFFF;
   --secondary-text-color: #FFFFFF;
   --tertiary-text-color: #111111;
+  --highlight-color: #999999;
 }
 
 * {
@@ -20,6 +21,20 @@ html, body {
   height: 100%;
   background-color: var(--primary-color);
   overflow: visible;
+}
+
+::placeholder {
+  opacity: 0.75;
+}
+
+button {
+  background-color: var(--tertiary-color);
+  color: var(--tertiary-text-color);
+}
+
+button:hover, button:hover * {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
 }
 
 /* 4k desktop */

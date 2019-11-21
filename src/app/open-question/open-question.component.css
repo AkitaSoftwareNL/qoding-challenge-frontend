@@ -2,17 +2,22 @@
   color: white;
   display: flex;
   flex-direction: column;
+  font-size: larger;
 }
 
 .app-open-question * {
   width: 100%;
   padding: 1ex 0ex;
-  margin: 0.5ex 0ex;
   text-align: center;
   border: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }
 
 .app-open-question textarea {
   resize: none;
   text-align: left;
+  padding: 1em;
+  width: calc(100% - 2em);
+  margin: 1em 0;
 }
