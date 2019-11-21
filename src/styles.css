@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #c23350;
+  --secondary-color: #111111;
+  --tertiary-color: #FFFFFF;
+  --primary-background-color: #c23350;
+  --secondary-background-color: #111111;
+  --tertiary-background-color: #FFFFFF;
+  --primary-text-color: #FFFFFF;
+  --secondary-text-color: #FFFFFF;
+  --tertiary-text-color: #111111;
+}
+
+* {
+  padding: 0em;
+  margin: 0em;
+  font-family: monospace;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--primary-color);
+  overflow: visible;
+}
+
+/* 4k desktop */
+
+@media only screen and (min-width: 1442px) {}
+
+/* desktop */
+
+@media only screen and (max-width: 1441px) {}
+
+/* laptop */
+
+@media only screen and (max-width: 1025px) {}
+
+/* tablet */
+
+@media only screen and (max-width: 769px) {}
+
+/* phone */
+
+@media only screen and (max-width: 426px) {}
