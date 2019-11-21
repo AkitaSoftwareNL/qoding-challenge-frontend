@@ -1,11 +1,12 @@
 .app-open-question {
+  width: 100%;
   color: white;
   display: flex;
   flex-direction: column;
   font-size: larger;
 }
 
-.app-open-question * {
+.app-open-question>* {
   width: 100%;
   padding: 1ex 0ex;
   text-align: center;
@@ -20,4 +21,29 @@
   padding: 1em;
   width: calc(100% - 2em);
   margin: 1em 0;
+  min-height: 15em;
 }
+
+/* 4k desktop */
+
+@media only screen and (min-width: 1442px) {}
+
+/* desktop */
+
+@media only screen and (max-width: 1441px) {}
+
+/* laptop */
+
+@media only screen and (max-width: 1025px) {}
+
+/* tablet */
+
+@media only screen and (max-width: 769px) {
+  .app-open-question {
+    font-size: medium;
+  }
+}
+
+/* phone */
+
+@media only screen and (max-width: 426px) {}
