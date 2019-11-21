@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-open-question',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class OpenQuestionComponent implements OnInit {
-
+  @Input() question: string;
+  @Input() currentIndex: number;
+  @Output() notify = new EventEmitter();
+  @ViewChild('input') textarea: ElementRef;
   constructor() { }
 
   ngOnInit() {
   }
+
+  next() {
+    this.notify.emit();
+    this.textarea.nativeElement.focus();
+  }
 }
+
+

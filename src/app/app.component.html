@@ -4,7 +4,7 @@
   </div>
   <div class="row content">
     <div class="question-box">
-      <app-open-question></app-open-question>
+      <app-open-question [currentIndex]="currentQuestionIndex+1" [question]="questions[currentQuestionIndex]" (notify)="onNext()"></app-open-question>
     </div>
   </div>
 </div>
