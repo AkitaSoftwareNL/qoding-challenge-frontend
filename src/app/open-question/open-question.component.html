@@ -1,0 +1,9 @@
+<div class="app-open-question">
+  <h1>{{currentIndex}} : {{question.question}}</h1>
+  <p>{{question.attachment}}</p>
+  <textarea #input autofocus cols="30" [(ngModel)]="question.givenAnswer" rows="10"
+    placeholder="Type hier uw antwoord"></textarea>
+  <button (click)="next()">
+    <h2>Volgende vraag</h2>
+  </button>
+</div>

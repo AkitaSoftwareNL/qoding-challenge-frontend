@@ -1,0 +1,44 @@
+.app-open-question {
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0em;
+}
+
+.app-open-question>* {
+  width: 100%;
+  margin: 0.5em 0em;
+  padding: 1em 0;
+  text-align: center;
+  border: none;
+}
+
+.app-open-question textarea {
+  font-size: 1em;
+  resize: none;
+  text-align: left;
+  padding: 1em;
+  width: calc(100% - 2em);
+  margin: 1em 0;
+}
+
+/* 4k desktop */
+
+@media only screen and (min-width: 1442px) {}
+
+/* desktop */
+
+@media only screen and (max-width: 1441px) {}
+
+/* laptop */
+
+@media only screen and (max-width: 1025px) {}
+
+/* tablet */
+
+@media only screen and (max-width: 769px) {}
+
+/* phone */
+
+@media only screen and (max-width: 426px) {}

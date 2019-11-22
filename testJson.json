@@ -1,0 +1,334 @@
+{
+  "campaigns": [
+    {
+      "id": "J-Fall",
+      "questions": [
+        {
+          "questionID": 0,
+          "type": "open",
+          "question": "ex eiusmod ex in deserunt laboris enim est id culpa adipisicing aliqua ullamco commodo Lorem",
+          "attachment": "Consequat esse enim eu enim ex reprehenderit nulla labore pariatur laborum mollit laborum. Consequat ut Lorem mollit et ullamco voluptate dolor et voluptate nostrud laborum cupidatat nulla sint. Ullamco adipisicing dolore sint officia amet minim minim duis qui nostrud.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "labore proident id est nostrud aliqua cillum dolor non aliquip elit tempor laborum et est",
+            "laborum cillum ex veniam duis do cupidatat minim irure reprehenderit culpa qui enim nisi nisi",
+            "cillum ex excepteur cupidatat dolore sint officia minim nostrud et nulla nisi eu cillum minim",
+            "do nisi sunt proident ex deserunt magna duis sint do sit ullamco cupidatat esse consectetur"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 1,
+          "type": "open",
+          "question": "aliquip duis occaecat aute velit cupidatat elit sit pariatur eiusmod tempor ullamco occaecat culpa nulla",
+          "attachment": "Magna aliqua commodo laborum excepteur do aliqua. Fugiat irure irure et et cupidatat dolor adipisicing aliqua cillum. Anim elit cupidatat aliquip do tempor ex mollit eu ut consequat incididunt minim. Minim culpa mollit proident ut tempor aliqua aliquip. Velit aliquip dolor nulla nulla et incididunt reprehenderit veniam fugiat consectetur fugiat voluptate sunt.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "enim in Lorem ut et nulla ad culpa ullamco anim nostrud dolore quis non culpa",
+            "irure ex ex in occaecat culpa veniam ex consequat fugiat deserunt do anim nostrud aliquip",
+            "mollit sit sint do nulla ipsum ex consequat tempor amet aliqua non reprehenderit ad ipsum",
+            "sint laborum ea labore duis anim anim cupidatat deserunt est velit ullamco proident sit Lorem"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 2,
+          "type": "multiple",
+          "question": "mollit ex ullamco voluptate cupidatat excepteur tempor pariatur Lorem ipsum fugiat id ipsum ullamco consectetur",
+          "attachment": "Consequat irure amet aliqua consequat esse sit velit sunt anim. Quis do laborum reprehenderit commodo incididunt sint sit proident nulla nulla elit. Officia quis deserunt officia in laboris magna do ad occaecat irure magna nostrud. Laborum Lorem reprehenderit pariatur consectetur est. Eiusmod nisi proident proident nulla dolor fugiat est enim. Lorem anim cillum cillum consectetur dolor anim labore in officia veniam qui mollit. Dolore aliqua ex irure dolore deserunt ipsum occaecat aute laborum.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "dolore officia adipisicing do enim esse minim sunt minim culpa nisi consectetur et enim enim",
+            "consequat qui minim tempor sint ad ipsum laborum quis duis proident ea sunt cillum commodo",
+            "deserunt ex elit nostrud mollit cillum veniam minim ex amet dolore ut consectetur quis dolor",
+            "ipsum ullamco fugiat est pariatur cupidatat dolore anim exercitation non deserunt culpa irure laboris magna"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 3,
+          "type": "open",
+          "question": "anim irure sit sint sint anim laborum aliqua velit occaecat minim ut consequat aliqua velit",
+          "attachment": "Ad aute ullamco incididunt eiusmod veniam consectetur ea elit ut. Enim dolore incididunt quis commodo. Velit aute dolor ut id id nostrud et do anim excepteur id irure.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "deserunt laboris fugiat non anim exercitation ullamco eu ea commodo eiusmod irure reprehenderit duis laborum",
+            "ad incididunt deserunt in magna ad mollit tempor dolor cupidatat officia laboris nostrud fugiat cupidatat",
+            "reprehenderit aliqua fugiat proident quis fugiat proident ullamco irure ad tempor cupidatat qui consequat nostrud",
+            "tempor ipsum id proident id do irure ex incididunt tempor aliquip occaecat consectetur duis eiusmod"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 4,
+          "type": "multiple",
+          "question": "anim consectetur minim ex elit consectetur est irure eu excepteur veniam ex dolore laborum cillum",
+          "attachment": "Mollit velit labore ut pariatur et ad. Anim qui aliqua ex exercitation minim non aliquip cupidatat adipisicing tempor aliquip laboris culpa exercitation. Consectetur mollit ipsum nostrud minim aute non qui minim eiusmod aliquip irure. Veniam commodo in excepteur culpa commodo.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "consectetur exercitation eu voluptate velit officia ad sunt incididunt sint ipsum sit amet ipsum ex",
+            "sunt nostrud elit quis non esse sint adipisicing irure adipisicing consequat occaecat sunt dolor ut",
+            "adipisicing aliqua fugiat voluptate nulla aliqua labore laborum consectetur fugiat duis et elit sint laboris",
+            "esse veniam Lorem elit ut officia commodo ullamco occaecat ex exercitation ad nulla cupidatat laboris"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 5,
+          "type": "open",
+          "question": "reprehenderit in commodo non sit labore veniam reprehenderit proident voluptate excepteur sit ex amet ullamco",
+          "attachment": "Mollit do adipisicing fugiat fugiat sit anim eiusmod sint commodo eu reprehenderit in dolore cupidatat. Aliquip occaecat dolor sunt deserunt irure nostrud duis aliquip voluptate ad elit proident. Consectetur minim nisi pariatur fugiat officia excepteur cupidatat in culpa cupidatat. Adipisicing pariatur eu sunt non ut ullamco enim dolor proident ipsum. Ipsum minim est aute excepteur commodo ipsum cupidatat eu laboris. Ex esse labore ullamco occaecat excepteur commodo cillum ipsum. Magna ad minim eu officia magna laboris Lorem eiusmod.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "aliqua non culpa labore labore irure Lorem Lorem ipsum proident incididunt ipsum duis est eiusmod",
+            "culpa sunt ex velit aliqua ullamco culpa eiusmod adipisicing ut nisi anim aliquip quis proident",
+            "cupidatat quis amet proident id ipsum labore do enim duis magna magna id laborum non",
+            "voluptate nulla quis mollit eiusmod cillum nostrud magna consequat exercitation nisi proident aliqua magna qui"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 6,
+          "type": "open",
+          "question": "fugiat deserunt ex aliqua dolore dolore amet amet ipsum proident magna quis dolor laboris elit",
+          "attachment": "Lorem commodo sit sint cupidatat nostrud. Veniam ut sint nulla nulla Lorem officia ut id minim ipsum elit fugiat ullamco. Anim commodo cillum culpa sunt laboris exercitation anim occaecat labore sint dolore ex. Dolore cupidatat quis anim pariatur laborum quis mollit incididunt reprehenderit nulla irure aliquip.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "enim cupidatat incididunt sint ullamco cillum est enim dolore ipsum anim quis voluptate esse irure",
+            "dolore irure id incididunt ullamco dolor minim ex sunt voluptate eiusmod ullamco fugiat sit et",
+            "minim id qui do fugiat Lorem cupidatat et consequat est cillum consequat et occaecat ullamco",
+            "enim Lorem sint adipisicing occaecat veniam laborum dolore ipsum aliquip occaecat sunt ex cupidatat sint"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 7,
+          "type": "open",
+          "question": "minim magna deserunt qui exercitation et consequat ex ipsum proident pariatur et labore reprehenderit aliqua",
+          "attachment": "Qui nostrud Lorem nostrud duis sunt nisi anim in voluptate consectetur exercitation. Pariatur excepteur dolore velit ut. Enim ut sint dolore quis cillum deserunt non enim commodo amet ut.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "officia laborum eu incididunt irure consequat voluptate quis exercitation labore mollit nostrud labore commodo mollit",
+            "nisi aliquip eu amet pariatur magna nulla laborum in elit est ut laboris quis excepteur",
+            "incididunt elit nostrud ullamco velit irure sint exercitation qui exercitation ullamco do et consequat deserunt",
+            "minim adipisicing ipsum voluptate qui nulla mollit mollit minim nostrud laboris sint laborum officia excepteur"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 8,
+          "type": "multiple",
+          "question": "aliquip voluptate elit cupidatat sint anim ea nulla magna mollit incididunt culpa proident anim ullamco",
+          "attachment": "Ut tempor duis eu eiusmod irure esse eu esse occaecat do cillum occaecat. Consectetur Lorem proident tempor mollit cillum irure sint. Ex commodo voluptate adipisicing excepteur excepteur eiusmod ex sit.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "cupidatat anim quis duis sint incididunt mollit culpa ut voluptate non laborum et id deserunt",
+            "adipisicing culpa aute ut veniam enim id ea fugiat cillum et tempor amet ullamco aliqua",
+            "amet irure id sint tempor mollit ullamco aliqua aliquip duis ut occaecat aute officia ad",
+            "enim ut enim ex occaecat culpa officia laborum nisi commodo commodo pariatur quis ullamco fugiat"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 9,
+          "type": "open",
+          "question": "qui Lorem Lorem do aute culpa dolore nostrud pariatur in velit consequat fugiat veniam eu",
+          "attachment": "Voluptate ipsum ex reprehenderit id aliquip nulla. Est tempor proident incididunt incididunt adipisicing culpa id commodo cillum voluptate sunt mollit. Ad eu esse aliqua laborum cillum esse magna esse excepteur exercitation voluptate. Ex sint id eu dolor. Minim consectetur nostrud nisi minim. Ut exercitation officia elit dolore laboris. Adipisicing sunt enim do aute.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "ut minim nulla cupidatat pariatur culpa cillum nulla voluptate magna consequat mollit reprehenderit duis sunt",
+            "reprehenderit magna cupidatat tempor reprehenderit voluptate adipisicing nulla ipsum commodo velit proident est duis aliquip",
+            "deserunt non cillum tempor esse nisi aliqua laborum labore fugiat enim sint nostrud nostrud sunt",
+            "quis adipisicing minim deserunt sint deserunt aute sit id commodo laborum nulla aliqua laborum officia"
+          ],
+          "givenAnswer": ""
+        }
+      ]
+    },
+    {
+      "id": "Andere",
+      "questions": [
+        {
+          "questionID": 0,
+          "type": "multiple",
+          "question": "excepteur pariatur sint sunt laborum occaecat nisi anim quis sunt sint voluptate et sint voluptate",
+          "attachment": "Nostrud voluptate laboris mollit consequat est proident qui est. Sunt aute pariatur elit magna occaecat adipisicing esse voluptate exercitation officia. Duis magna voluptate tempor qui mollit dolore proident ut id ut magna.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "Lorem et veniam laboris veniam magna magna voluptate laborum ullamco sint duis officia adipisicing sunt",
+            "minim anim exercitation nisi eu velit pariatur occaecat eu reprehenderit dolor id sunt irure reprehenderit",
+            "tempor reprehenderit cillum et esse magna veniam et commodo aliqua ipsum adipisicing voluptate fugiat sunt",
+            "tempor do fugiat id dolore aute irure veniam eu tempor id magna qui deserunt ex"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 1,
+          "type": "multiple",
+          "question": "aute Lorem adipisicing incididunt ut Lorem eiusmod aliqua ex veniam deserunt amet veniam est non",
+          "attachment": "Deserunt commodo magna consequat nisi deserunt ex. Voluptate in ullamco minim minim eu eu do culpa. Consequat cillum commodo nulla elit officia nisi ea deserunt ex non ut. Irure ad consectetur consequat proident aliqua minim adipisicing id voluptate. Veniam reprehenderit adipisicing do ea sunt et incididunt quis id laborum pariatur do.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "mollit qui amet ut eiusmod anim labore voluptate officia Lorem proident in incididunt sunt elit",
+            "ad duis aute magna sint duis deserunt pariatur esse cupidatat irure veniam commodo reprehenderit consequat",
+            "pariatur est et consectetur incididunt duis duis sunt amet ipsum anim officia ut cillum aliqua",
+            "fugiat anim labore voluptate exercitation deserunt duis incididunt ea culpa irure eu labore aliquip laborum"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 2,
+          "type": "multiple",
+          "question": "aliquip ea officia est reprehenderit velit eiusmod magna ipsum eu occaecat minim est cillum adipisicing",
+          "attachment": "Cupidatat laborum labore eu velit excepteur. Ut occaecat do in irure elit id sit. Dolor dolore Lorem ad et incididunt voluptate officia. Sunt anim Lorem sit id consectetur aliqua ut ullamco sint amet cillum magna nisi.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "qui qui pariatur cupidatat mollit ea dolor cillum minim labore eu id duis dolore officia",
+            "cillum culpa do ex id deserunt aliquip sit irure nisi sint irure irure ut do",
+            "velit Lorem culpa reprehenderit voluptate labore magna laborum ullamco esse ad proident enim quis enim",
+            "ullamco ipsum id mollit nostrud mollit pariatur ut fugiat laborum velit fugiat nostrud aute irure"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 3,
+          "type": "multiple",
+          "question": "aliquip labore aliquip consequat incididunt est voluptate velit adipisicing ipsum ullamco in eiusmod qui nostrud",
+          "attachment": "Ad culpa magna irure veniam deserunt ea duis nostrud aliquip culpa anim. Et do id veniam elit dolore adipisicing duis. Non sint et eiusmod ullamco adipisicing et nostrud deserunt culpa ex ullamco.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "mollit anim ut consectetur ullamco laboris non Lorem tempor nulla nulla incididunt ad occaecat non",
+            "sunt enim deserunt labore sit ullamco ipsum aliqua deserunt sunt aute ex mollit aute nostrud",
+            "proident occaecat mollit qui in ullamco sint ipsum cupidatat culpa mollit do enim commodo esse",
+            "dolore est consequat occaecat mollit culpa pariatur sit fugiat eiusmod eu magna deserunt elit enim"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 4,
+          "type": "multiple",
+          "question": "mollit do veniam ad dolor magna dolor tempor mollit ut do deserunt aliqua aliqua laborum",
+          "attachment": "Eu excepteur ullamco voluptate veniam ut commodo. Sunt consectetur amet ea culpa elit quis enim culpa dolor eu est nulla sit. Tempor ut aute consectetur incididunt.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "nostrud commodo velit proident quis deserunt occaecat ipsum excepteur in in commodo laboris velit Lorem",
+            "enim elit ex officia id excepteur duis fugiat do nulla sit sint sit aliqua esse",
+            "duis qui minim do quis proident nostrud dolor in voluptate labore enim laborum anim ipsum",
+            "esse excepteur proident ex occaecat minim eiusmod est cupidatat non laborum ea mollit consequat est"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 5,
+          "type": "open",
+          "question": "pariatur officia esse aliquip Lorem laboris proident cupidatat consequat ad proident laborum eiusmod culpa esse",
+          "attachment": "Enim enim nulla id magna enim quis esse proident nisi commodo ipsum. Cillum adipisicing labore amet velit ea elit. Nostrud eu excepteur dolore tempor ipsum enim cillum id.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "esse ipsum esse eiusmod eu ullamco dolor exercitation nulla qui fugiat et duis magna ipsum",
+            "voluptate et tempor mollit sint reprehenderit quis exercitation et do adipisicing aute adipisicing magna sit",
+            "consectetur non do consectetur fugiat adipisicing ipsum deserunt sunt aliqua incididunt laboris dolore nisi qui",
+            "culpa qui voluptate non enim enim non minim cupidatat incididunt proident laborum duis do duis"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 6,
+          "type": "multiple",
+          "question": "occaecat proident aute et sunt dolor magna dolor laborum quis excepteur Lorem magna elit nisi",
+          "attachment": "Ipsum sint sint et ex proident consequat non dolore excepteur mollit id aliquip. Officia aliqua aliqua eu Lorem nisi et consequat enim minim occaecat ut et nostrud dolor. Eiusmod voluptate anim magna minim pariatur adipisicing occaecat. Magna deserunt id irure dolore pariatur consequat adipisicing. Excepteur elit cillum cillum anim pariatur. Magna do ex incididunt anim.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "qui nulla labore fugiat consequat do in sit mollit aliqua voluptate dolore eiusmod incididunt et",
+            "ea duis enim occaecat esse ut sint dolore veniam nostrud dolore non eiusmod ut dolor",
+            "mollit non aute in pariatur nulla sint quis sint duis non non mollit do nulla",
+            "sit reprehenderit exercitation labore enim sit sint aute ipsum laboris dolore do esse Lorem cillum"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 7,
+          "type": "multiple",
+          "question": "excepteur pariatur nulla laborum nostrud reprehenderit ut eu dolor enim velit est duis amet do",
+          "attachment": "Labore consectetur Lorem aliquip esse anim ea. Sit quis exercitation dolor eu velit consectetur Lorem culpa dolore reprehenderit ut consectetur. Eu aliquip quis anim aliqua pariatur voluptate officia. Et ipsum qui culpa ex. Cillum elit velit elit laborum.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "ut ex laboris ipsum eiusmod sit ullamco pariatur in incididunt laborum ullamco tempor id fugiat",
+            "dolore occaecat in minim adipisicing elit tempor qui in adipisicing officia nostrud ipsum sunt dolor",
+            "qui deserunt exercitation culpa magna enim mollit mollit commodo officia do sint officia voluptate labore",
+            "enim est et elit et mollit ea est laboris aliquip esse duis est ea consequat"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 8,
+          "type": "open",
+          "question": "sit esse consectetur tempor enim et ex aliquip minim ipsum do occaecat consectetur culpa nostrud",
+          "attachment": "Voluptate est non cupidatat non do tempor ipsum eu incididunt. Culpa cupidatat enim magna anim tempor ea deserunt sit elit qui nisi. Aliqua do enim exercitation anim dolore non do enim ad. Reprehenderit exercitation velit dolore reprehenderit non enim enim est aliquip excepteur tempor aliqua velit non. Lorem commodo eiusmod dolore magna sunt Lorem elit. Sint aliquip amet laborum non consequat do sint sit fugiat velit consectetur irure ut. Aliquip pariatur occaecat consequat Lorem ad officia labore proident id ea enim reprehenderit do eu.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "enim laboris consequat nisi irure proident voluptate non eiusmod amet nisi et in sit consectetur",
+            "nisi do ullamco occaecat aliquip excepteur pariatur in mollit consequat sit ipsum voluptate esse minim",
+            "proident ea ad adipisicing pariatur quis enim esse proident ullamco elit do qui laboris do",
+            "veniam laboris aliqua anim amet ut velit mollit reprehenderit exercitation minim adipisicing Lorem nulla fugiat"
+          ],
+          "givenAnswer": ""
+        },
+        {
+          "questionID": 9,
+          "type": "multiple",
+          "question": "anim fugiat consequat eiusmod adipisicing quis exercitation dolore cupidatat dolore proident ullamco pariatur consequat pariatur",
+          "attachment": "Dolore anim est culpa cillum esse. Consectetur dolor excepteur esse exercitation mollit et ex fugiat quis. Aute duis quis nisi nulla est in.\r\n",
+          "participantID": 0,
+          "campaignName": "J-Fall",
+          "stateID": 1,
+          "possibleAnswer": [
+            "irure anim Lorem fugiat mollit elit adipisicing enim irure occaecat ex voluptate commodo laborum officia",
+            "qui irure minim sint ea consectetur anim proident aliqua aliqua sint consequat cupidatat aliqua quis",
+            "fugiat cupidatat qui duis mollit tempor sint nisi in nostrud labore nostrud mollit reprehenderit consequat",
+            "eiusmod qui voluptate quis mollit sint nostrud nostrud minim consequat cillum veniam officia laboris velit"
+          ],
+          "givenAnswer": ""
+        }
+      ]
+    }
+  ]
+}
