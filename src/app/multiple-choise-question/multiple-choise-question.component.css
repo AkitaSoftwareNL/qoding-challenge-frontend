@@ -1,6 +1,6 @@
 .app-multiple-choise-question {
   width: 100%;
-  color: white;
+  color: var( --primary-text-color);
   display: flex;
   flex-direction: column;
   padding: 1em 0em;
