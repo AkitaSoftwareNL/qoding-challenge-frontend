@@ -2,13 +2,9 @@
   --primary-color: #c23350;
   --secondary-color: #111111;
   --tertiary-color: #FFFFFF;
-  --primary-background-color: #c23350;
-  --secondary-background-color: #111111;
-  --tertiary-background-color: #FFFFFF;
   --primary-text-color: #FFFFFF;
   --secondary-text-color: #FFFFFF;
   --tertiary-text-color: #111111;
-  --highlight-color: #999999;
 }
 
 * {
@@ -33,7 +29,7 @@ button {
 }
 
 button:hover, button:hover *, button:focus, button:focus * {
-  background-color: var(--secondary-background-color);
+  background-color: var(--secondary-color);
   color: var(--secondary-text-color);
 }
 

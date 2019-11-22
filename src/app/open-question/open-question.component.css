@@ -15,6 +15,8 @@
 }
 
 .app-open-question textarea {
+  background-color: var(--tertiary-color);
+  color: var(--tertiary-text-color);
   font-size: 1em;
   resize: none;
   text-align: left;
