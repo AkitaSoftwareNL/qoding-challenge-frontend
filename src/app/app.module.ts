@@ -5,13 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OpenQuestionComponent } from './open-question/open-question.component';
 import { QuestionsApi } from 'src/api/questions.api';
+import { OpenQuestionComponent } from './open-question/open-question.component';
+import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OpenQuestionComponent
+    OpenQuestionComponent,
+    MultipleChoiseQuestionComponent,
   ],
   imports: [
     BrowserModule,

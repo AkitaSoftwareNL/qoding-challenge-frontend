@@ -1,33 +1,44 @@
 import { Component } from '@angular/core';
 import { QuestionsApi } from 'src/api/questions.api';
+import { Question } from 'src/classes/question';
+import { Campaign } from 'src/classes/campaign';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  campagneName = 'J-Fall';
   currentQuestionIndex = 0;
-  questions;
+  currentQuestion: Question;
+  campaign;
   constructor(private questionApi: QuestionsApi) {
-    this.play();
+    this.playCampagne();
   }
 
-  play() {
-    this.questions = this.questionApi.get();
+  playCampagne() {
+    this.campaign = null;
+    this.questionApi.get().subscribe(campaign => {
+      this.campaign = campaign;
+      this.currentQuestion = this.campaign.questions[0];
+    });
   }
 
   onNext() {
-    if (this.questions.length - 1 <= this.currentQuestionIndex) {
+    if (this.campaign.questions.length - 1 <= this.currentQuestionIndex) {
       this.send();
       this.currentQuestionIndex = 0;
-      this.play();
+      this.playCampagne();
     } else {
       this.currentQuestionIndex += 1;
+      this.currentQuestion = this.campaign.questions[this.currentQuestionIndex];
     }
   }
+
   send() {
-    console.log(this.questions);
+    this.questionApi.post(this.campaign)
+      .subscribe(success => alert("Done"),
+        error => alert(error));
   }
 }

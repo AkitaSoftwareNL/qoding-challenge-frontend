@@ -1,11 +1,16 @@
 <div class="main">
-  <div class="row header">
-    <h1>{{campagneName}}</h1>
+  <div *ngIf="this.campaign" class="row header">
+    <h1>{{this.campaign.name}}</h1>
   </div>
   <div class="row content">
-    <div class="question-box">
-      <app-open-question [currentIndex]="currentQuestionIndex+1" [question]="questions[currentQuestionIndex]"
-        (notify)="onNext()"></app-open-question>
+    <div *ngIf="this.campaign" class="box">
+      <app-open-question *ngIf="currentQuestion.type == 'open'" [currentIndex]="currentQuestionIndex+1"
+        [question]="currentQuestion" (notify)="onNext()">
+      </app-open-question>
+
+      <app-multiple-choise-question *ngIf="currentQuestion.type == 'multiple'" [currentIndex]="currentQuestionIndex+1"
+        [question]="currentQuestion" (notify)="onNext()">
+      </app-multiple-choise-question>
     </div>
   </div>
 </div>

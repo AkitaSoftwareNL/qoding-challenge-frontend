@@ -1,5 +1,6 @@
 export class Question {
   questionID: 0;
+  type: '';
   question: '';
   attachment: '';
   participantID: 0;

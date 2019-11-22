@@ -1,0 +1,11 @@
+<div class="app-multiple-choise-question">
+  <h1>{{currentIndex}} : {{question.question}}</h1>
+  <h3>{{question.attachment}}</h3>
+  <!-- <textarea #input autofocus cols="30" [(ngModel)]="question.givenAnswer" rows="10"
+    placeholder="Type hier uw antwoord"></textarea> -->
+  <div *ngFor="let possibility of question.possibleAnswer">
+    <h1><button (click)="next(possibility)">
+        {{possibility}}
+      </button></h1>
+  </div>
+</div>

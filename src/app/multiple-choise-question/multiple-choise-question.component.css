@@ -1,11 +1,11 @@
-.app-open-question {
+.app-multiple-choise-question {
   width: 100%;
   color: white;
   display: flex;
   flex-direction: column;
 }
 
-.app-open-question>* {
+.app-multiple-choise-question * {
   width: 100%;
   padding: 1ex 0ex;
   text-align: center;
@@ -14,17 +14,8 @@
   transition: opacity .2s;
 }
 
-.app-open-question>button {
+.app-multiple-choise-question button {
   padding: 1em 0ex;
-}
-
-.app-open-question textarea {
-  font-size: 1em;
-  resize: none;
-  text-align: left;
-  padding: 1em;
-  width: calc(100% - 2em);
-  margin: 1em 0;
 }
 
 /* 4k desktop */
