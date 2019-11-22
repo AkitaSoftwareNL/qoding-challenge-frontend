@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { QuestionsApi } from 'src/api/questions.api';
 import { Question } from 'src/classes/question';
 import { Campaign } from 'src/classes/campaign';
@@ -10,19 +11,30 @@ import { Campaign } from 'src/classes/campaign';
 })
 
 export class AppComponent {
+  routeParams: Params;
+
   currentQuestionIndex = 0;
   currentQuestion: Question;
+  campaignName: string;
   campaign;
-  constructor(private questionApi: QuestionsApi) {
-    this.playCampagne('J-Fall');
+  constructor(private activatedRoute: ActivatedRoute, private questionApi: QuestionsApi) {
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.campaignName = params.campaignName;
+      if (this.campaignName != null) {
+        this.playCampagne(this.campaignName);
+      }
+    });
   }
 
-  playCampagne(campaignName) {
+  playCampagne(campaignName: string) {
     this.campaign = null;
     this.questionApi.get(campaignName).subscribe(campaign => {
       this.currentQuestionIndex = 0;
       this.campaign = campaign;
       this.currentQuestion = this.campaign.questions[0];
+    }, error => {
+      console.log(error);
     });
   }
 
@@ -36,8 +48,8 @@ export class AppComponent {
   }
 
   send() {
-    this.questionApi.post(this.campaign)
-      .subscribe(succes => this.playCampagne('J-Fall'), error => console.error(error));
+    this.questionApi.post(this.campaignName, this.campaign)
+      .subscribe(succes => this.playCampagne(this.campaignName), error => console.error(error));
     this.campaign = null;
   }
 }

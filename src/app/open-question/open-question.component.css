@@ -3,19 +3,15 @@
   color: white;
   display: flex;
   flex-direction: column;
+  padding: 1em 0em;
 }
 
 .app-open-question>* {
   width: 100%;
-  padding: 1ex 0ex;
+  margin: 0.5em 0em;
+  padding: 1em 0;
   text-align: center;
   border: none;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.app-open-question>button {
-  padding: 1em 0ex;
 }
 
 .app-open-question textarea {

@@ -7,4 +7,5 @@ export class Question {
   campaignName: '';
   stateID: 1;
   givenAnswer: '';
+  possibleAnswer: [];
 }

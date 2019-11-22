@@ -37,6 +37,10 @@ button:hover, button:hover *, button:focus, button:focus * {
   color: var(--secondary-text-color);
 }
 
+p {
+  font-size: large;
+}
+
 /* 4k desktop */
 
 @media only screen and (min-width: 1442px) {}
