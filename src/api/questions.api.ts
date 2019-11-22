@@ -7,18 +7,17 @@ import { Observable } from 'rxjs';
 export class QuestionsApi {
   constructor(private http: HttpClient) { }
 
-  get() {
-    let url = 'http://localhost:3000/campaign';
+  get(campaignName) {
+    let url = 'http://localhost:3000/campaign/';//+ campaignName;
     let head = new HttpHeaders();
     let param = new HttpParams();
     return this.http.get(url, { headers: head, params: param });
-
   }
 
   post(campaign) {
-    let url = 'http://localhost:3000/campaign';
+    let url = 'http://localhost:3000/campaign';//+ campaign.name;
     let head = new HttpHeaders();
     let param = new HttpParams();
-    return this.http.post(url, campaign, { headers: head, params: param })
+    return this.http.post(url, campaign, { headers: head, params: param });
   }
 }

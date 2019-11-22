@@ -14,12 +14,13 @@ export class AppComponent {
   currentQuestion: Question;
   campaign;
   constructor(private questionApi: QuestionsApi) {
-    this.playCampagne();
+    this.playCampagne('J-Fall');
   }
 
-  playCampagne() {
+  playCampagne(campaignName) {
     this.campaign = null;
-    this.questionApi.get().subscribe(campaign => {
+    this.questionApi.get(campaignName).subscribe(campaign => {
+      this.currentQuestionIndex = 0;
       this.campaign = campaign;
       this.currentQuestion = this.campaign.questions[0];
     });
@@ -28,8 +29,6 @@ export class AppComponent {
   onNext() {
     if (this.campaign.questions.length - 1 <= this.currentQuestionIndex) {
       this.send();
-      this.currentQuestionIndex = 0;
-      this.playCampagne();
     } else {
       this.currentQuestionIndex += 1;
       this.currentQuestion = this.campaign.questions[this.currentQuestionIndex];
@@ -38,7 +37,7 @@ export class AppComponent {
 
   send() {
     this.questionApi.post(this.campaign)
-      .subscribe(success => alert("Done"),
-        error => alert(error));
+      .subscribe(succes => this.playCampagne('J-Fall'), error => console.error(error));
+    this.campaign = null;
   }
 }
