@@ -1,4 +1,5 @@
 export class Campaign {
-  name: '';
+  campaignName: '';
+  participantID: 0;
   questions: [];
 }

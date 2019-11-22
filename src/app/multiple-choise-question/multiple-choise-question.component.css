@@ -28,7 +28,15 @@
 
 /* tablet */
 
-@media only screen and (max-width: 769px) {}
+@media only screen and (max-width: 769px) {
+  .app-multiple-choise-question {
+    padding: 0.25em 0em;
+  }
+  .app-multiple-choise-question>* {
+    margin: 0.25em 0em;
+    padding: 0.5em 0;
+  }
+}
 
 /* phone */
 

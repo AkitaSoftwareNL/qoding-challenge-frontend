@@ -37,7 +37,15 @@
 
 /* tablet */
 
-@media only screen and (max-width: 769px) {}
+@media only screen and (max-width: 769px) {
+  .app-open-question {
+    padding: 0.25em 0em;
+  }
+  .app-open-question>* {
+    margin: 0.25em 0em;
+    padding: 0.5em 0;
+  }
+}
 
 /* phone */
 
