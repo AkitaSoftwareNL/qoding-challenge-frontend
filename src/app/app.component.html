@@ -4,11 +4,11 @@
   </div>
   <div class="row content">
     <div *ngIf="this.campaign" class="box">
-      <app-open-question *ngIf="currentQuestion.type == 'open'" [currentIndex]="currentQuestionIndex+1"
+      <app-open-question *ngIf="currentQuestion.questionType == 'open'" [currentIndex]="currentQuestionIndex+1"
         [question]="currentQuestion" (notify)="onNext()">
       </app-open-question>
 
-      <app-multiple-choise-question *ngIf="currentQuestion.type == 'multiple'" [currentIndex]="currentQuestionIndex+1"
+      <app-multiple-choise-question *ngIf="currentQuestion.questionType == 'multiple'" [currentIndex]="currentQuestionIndex+1"
         [question]="currentQuestion" (notify)="onNext()">
       </app-multiple-choise-question>
     </div>
