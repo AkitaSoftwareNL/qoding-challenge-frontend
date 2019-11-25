@@ -8,9 +8,10 @@
         [question]="currentQuestion" (notify)="onNext()">
       </app-open-question>
 
-      <app-multiple-choise-question *ngIf="currentQuestion.questionType == 'multiple'" [questionIndex]="currentQuestionIndex+1"
-        [question]="currentQuestion" (notify)="onNext()">
+      <app-multiple-choise-question *ngIf="currentQuestion.questionType == 'multiple'"
+        [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
       </app-multiple-choise-question>
     </div>
+    <div *ngIf="!this.campaign" class="box"> </div>
   </div>
 </div>
