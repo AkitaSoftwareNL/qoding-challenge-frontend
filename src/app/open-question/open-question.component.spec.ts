@@ -26,12 +26,4 @@ describe('OpenQuestionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should display question title', () => {
-
-  });
-
-  it('should display question attachent', () => {
-
-  });
 });
