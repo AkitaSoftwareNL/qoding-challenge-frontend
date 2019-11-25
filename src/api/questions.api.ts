@@ -14,8 +14,8 @@ export class QuestionsApi {
     return this.http.get(url, { headers: head, params: param });
   }
 
-  post(campaignName: string, campaign: Campaign) {
-    const url = 'http://localhost:3000/campaigns/' + campaignName;
+  post(campaign: Campaign) {
+    const url = 'http://localhost:3000/campaigns/';
     const head = new HttpHeaders();
     const param = new HttpParams();
     return this.http.post(url, campaign, { headers: head, params: param });

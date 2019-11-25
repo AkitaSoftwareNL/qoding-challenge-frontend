@@ -48,7 +48,7 @@ export class AppComponent {
   }
 
   send() {
-    this.questionApi.post(this.campaignName, this.campaign)
+    this.questionApi.post(this.campaign)
       .subscribe(succes => this.playCampagne(this.campaignName), error => console.error(error));
     this.campaign = null;
   }
