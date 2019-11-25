@@ -19,7 +19,7 @@ export class AppComponent {
   constructor(private activatedRoute: ActivatedRoute, private questionApi: QuestionsApi) {
 
     this.activatedRoute.queryParams.subscribe(params => {
-      this.campaignName = params.campaignName;
+      this.campaignName = decodeURIComponent(params.campaignName);
       if (this.campaignName != null) {
         this.playCampagne(this.campaignName);
       }
