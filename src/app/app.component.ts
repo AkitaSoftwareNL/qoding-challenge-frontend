@@ -48,7 +48,7 @@ export class AppComponent {
 
   send() {
     this.questionApi.post(this.campaignName, this.campaign)
-      .subscribe(succes => this.playCampagne(this.campaignName), error => console.error(error));
+      .subscribe(succes => alert("Dank u voor het meedoen aan " + this.campaignName), error => console.error(error));
     this.campaign = null;
   }
 }
