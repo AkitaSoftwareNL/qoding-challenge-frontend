@@ -9,7 +9,7 @@ import { Question } from 'src/classes/question';
 
 export class OpenQuestionComponent implements OnInit {
   @Input() question: Question;
-  @Input() currentIndex: number;
+  @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
   @ViewChild('input') textarea: ElementRef;
   constructor() { }

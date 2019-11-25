@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { QuestionsApi } from 'src/api/questions.api';
 import { Question } from 'src/classes/question';
-import { Campaign } from 'src/classes/campaign';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +47,7 @@ export class AppComponent {
   }
 
   send() {
-    this.questionApi.post(this.campaign)
+    this.questionApi.post(this.campaignName, this.campaign)
       .subscribe(succes => this.playCampagne(this.campaignName), error => console.error(error));
     this.campaign = null;
   }

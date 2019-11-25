@@ -9,7 +9,7 @@ import { Question } from 'src/classes/question';
 
 export class MultipleChoiseQuestionComponent implements OnInit {
   @Input() question: Question;
-  @Input() currentIndex: number;
+  @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
   constructor() { }
 

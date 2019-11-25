@@ -3,8 +3,6 @@ export class Question {
   questionType: '';
   question: '';
   attachment: '';
-  participantID: 0;
-  campaignName: '';
   stateID: 1;
   givenAnswer: '';
   possibleAnswer: [];
