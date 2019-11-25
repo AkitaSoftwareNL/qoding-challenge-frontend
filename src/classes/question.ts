@@ -1,9 +1,13 @@
 export class Question {
-  questionID: 0;
-  questionType: '';
-  question: '';
-  attachment: '';
-  stateID: 1;
-  givenAnswer: '';
-  possibleAnswer: [];
+  constructor(
+    public questionID: number,
+    public questionType: string,
+    public question: string,
+    public attachment: string,
+    public stateID: number,
+    public givenAnswer: string,
+    public possibleAnswer: []
+  ) {
+  }
+
 }

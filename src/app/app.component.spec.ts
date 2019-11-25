@@ -1,35 +1,36 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { OpenQuestionComponent } from './open-question/open-question.component';
+import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { QuestionsApi } from 'src/api/questions.api';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        FormsModule,
+        HttpClientModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        OpenQuestionComponent,
+        MultipleChoiseQuestionComponent,
       ],
+      providers: [
+        QuestionsApi
+      ]
     }).compileComponents();
   }));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
+
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'qoding-challenge-frontend'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('qoding-challenge-frontend');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to qoding-challenge-frontend!');
   });
 });

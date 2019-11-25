@@ -11,7 +11,6 @@ import { Question } from 'src/classes/question';
 
 export class AppComponent {
   routeParams: Params;
-
   currentQuestionIndex = 0;
   currentQuestion: Question;
   campaignName: string;
@@ -34,6 +33,7 @@ export class AppComponent {
       this.currentQuestion = this.campaign.questions[0];
     }, error => {
       console.log(error);
+      alert('Oeps! Er ging wat mis');
     });
   }
 
@@ -48,7 +48,10 @@ export class AppComponent {
 
   send() {
     this.questionApi.post(this.campaignName, this.campaign)
-      .subscribe(succes => alert("Dank u voor het meedoen aan " + this.campaignName), error => console.error(error));
+      .subscribe(succes => alert('Dank u voor het meedoen aan ' + this.campaignName), error => {
+        console.error(error);
+        alert('Oeps! Er ging wat mis');
+      });
     this.campaign = null;
   }
 }
