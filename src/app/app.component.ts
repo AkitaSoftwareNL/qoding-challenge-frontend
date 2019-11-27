@@ -19,7 +19,7 @@ export class AppComponent {
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.campaignName = decodeURIComponent(params.campaignName);
-      if (this.campaignName != null) {
+      if (this.campaignName != null || this.campaign !== undefined) {
         this.playCampagne(this.campaignName);
       }
     });
