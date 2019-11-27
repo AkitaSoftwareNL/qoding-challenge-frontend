@@ -13,14 +13,15 @@ export class AppComponent {
   routeParams: Params;
   currentQuestionIndex = 0;
   currentQuestion: Question;
-  campaignName: string;
+  campaignName = '';
   campaign;
   constructor(private activatedRoute: ActivatedRoute, private questionApi: QuestionsApi) {
 
     this.activatedRoute.queryParams.subscribe(params => {
-      this.campaignName = decodeURIComponent(params.campaignName);
-      if (this.campaignName != null || this.campaign !== undefined) {
-        this.playCampagne(this.campaignName);
+      const name = decodeURIComponent(params.campaignName);
+      if (name !== 'undefined') {
+        this.playCampagne(name);
+        this.campaignName = name;
       }
     });
   }
