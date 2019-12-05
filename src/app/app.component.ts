@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { QuestionsApi } from 'src/api/questions.api';
+import { QuestionsService } from 'src/api/questionsService';
 import { Question } from 'src/classes/question';
 
 @Component({
@@ -15,7 +15,7 @@ export class AppComponent {
   currentQuestion: Question;
   campaignName = '';
   campaign;
-  constructor(private activatedRoute: ActivatedRoute, private questionApi: QuestionsApi) {
+  constructor(private activatedRoute: ActivatedRoute, private questionsService: QuestionsService) {
 
     this.activatedRoute.queryParams.subscribe(params => {
       const name = decodeURIComponent(params.campaignName);
@@ -28,7 +28,7 @@ export class AppComponent {
 
   playCampagne(campaignName: string) {
     this.campaign = null;
-    this.questionApi.get(campaignName).subscribe(campaign => {
+    this.questionsService.get(campaignName).subscribe(campaign => {
       this.currentQuestionIndex = 0;
       this.campaign = campaign;
       this.currentQuestion = this.campaign.questions[0];
@@ -48,7 +48,7 @@ export class AppComponent {
   }
 
   send() {
-    this.questionApi.post(this.campaignName, this.campaign)
+    this.questionsService.post(this.campaignName, this.campaign)
       .subscribe(succes => alert('Dank u voor het meedoen aan ' + this.campaignName), error => {
         console.error(error);
         alert('Oeps! Er ging wat mis');

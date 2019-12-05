@@ -6,7 +6,7 @@ import { OpenQuestionComponent } from './open-question/open-question.component';
 import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { QuestionsApi } from 'src/api/questions.api';
+import { QuestionsApi } from 'src/api/questionsService';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

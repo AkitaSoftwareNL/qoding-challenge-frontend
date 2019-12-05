@@ -3,7 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Campaign } from 'src/classes/campaign';
 
 @Injectable()
-export class QuestionsApi {
+export class QuestionsService {
   constructor(private http: HttpClient) { }
 
   get(campaignName: string) {
