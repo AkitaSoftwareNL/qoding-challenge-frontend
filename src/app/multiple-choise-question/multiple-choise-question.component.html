@@ -4,9 +4,9 @@
   <!-- <textarea #input autofocus cols="30" [(ngModel)]="question.givenAnswer" rows="10"
     placeholder="Type hier uw antwoord"></textarea> -->
 
-  <button *ngFor="let possibility of question.possibleAnswer" (click)="next(possibility)">
+  <button *ngFor="let possibility of question.possibleAnswers" (click)="next(possibility.possibleAnswer)">
     <p>
-      {{possibility}}
+      {{possibility.possibleAnswer}}
     </p>
   </button>
 
