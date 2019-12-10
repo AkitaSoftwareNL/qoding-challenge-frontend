@@ -1,13 +1,15 @@
+import { PossibleAnswer } from './possible-answer';
+
 export class Question {
   constructor(
     public questionID: number,
-    public questionType: string,
     public question: string,
+    public categoryType: string,
+    public questionType: string,
     public attachment: string,
-    public stateID: number,
+    public possibleAnswers: PossibleAnswer[],
     public givenAnswer: string,
-    public possibleAnswer: []
-  ) {
-  }
+    public stateID: number,
+  ) { }
 
 }
