@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/conference/1', pathMatch: 'full' },
+  { path: '', redirectTo: '/conference', pathMatch: 'full' },
   { path: 'conference/:id', component: QuizComponent }
 ];
 
