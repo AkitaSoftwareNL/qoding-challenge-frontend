@@ -15,6 +15,8 @@ export class QuizComponent {
   currentQuestion: Question;
   campaign: Campaign;
   campaignID: number;
+  endscreen: boolean = false;
+  message: string = 'Bedankt voor het meedoen aan ' + this.campaign.campaignName + '!';
 
   constructor(private route: ActivatedRoute, private questionsService: QuestionsService) {
     this.route.params.subscribe(params => {
@@ -50,7 +52,7 @@ export class QuizComponent {
         console.error(error);
         alert('Oeps! Er ging wat mis');
       });
+    this.endscreen = true;
     this.campaign = null;
   }
-
 }

@@ -12,6 +12,8 @@
         [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
       </app-multiple-choise-question>
     </div>
-    <div *ngIf="!this.campaign" class="box"> </div>
+    <div *ngIf="this.endscreen" class="box">
+      <h1>{{this.message}}</h1>  
+    </div>
   </div>
 </div>
