@@ -1,0 +1,17 @@
+<div class="main">
+  <div *ngIf="this.campaign" class="row header">
+    <h1>{{this.campaign.campaignName}}</h1>
+  </div>
+  <div class="row content">
+    <div *ngIf="this.campaign" class="box">
+      <app-open-question *ngIf="currentQuestion.questionType == 'open'" [questionIndex]="currentQuestionIndex+1"
+        [question]="currentQuestion" (notify)="onNext()">
+      </app-open-question>
+
+      <app-multiple-choise-question *ngIf="currentQuestion.questionType == 'multiple'"
+        [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
+      </app-multiple-choise-question>
+    </div>
+    <div *ngIf="!this.campaign" class="box"> </div>
+  </div>
+</div>
