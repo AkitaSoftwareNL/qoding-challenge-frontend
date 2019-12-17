@@ -7,6 +7,7 @@ export class Question {
     public categoryType: string,
     public questionType: string,
     public attachment: string,
+    public startcode: string,
     public possibleAnswers: PossibleAnswer[],
     public givenAnswer: string,
     public stateID: number,

@@ -9,6 +9,7 @@ import { QuestionsService } from 'src/api/questionsService';
 import { OpenQuestionComponent } from './open-question/open-question.component';
 import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { ProgramQuestionComponent } from './program-question/program-question.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { QuizComponent } from './quiz/quiz.component';
     OpenQuestionComponent,
     MultipleChoiseQuestionComponent,
     QuizComponent,
+    ProgramQuestionComponent,
   ],
   imports: [
     BrowserModule,
