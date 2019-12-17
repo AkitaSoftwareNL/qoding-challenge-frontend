@@ -15,7 +15,6 @@ export class QuizComponent {
   currentQuestion: Question;
   campaign: Campaign;
   campaignID: number;
-  campaignName: string;
   endscreen: boolean = false;
   message: string;
 
