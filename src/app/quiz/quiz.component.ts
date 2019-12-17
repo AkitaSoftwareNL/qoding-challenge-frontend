@@ -55,7 +55,6 @@ export class QuizComponent {
       });
     this.endscreen = true;
     this.message = 'Bedankt voor het meedoen aan ' + this.campaign.campaignName + '!';
-    this.campaignName = this.campaign.campaignName;
     this.campaign = null;
   }
 }
