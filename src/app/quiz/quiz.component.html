@@ -11,6 +11,10 @@
       <app-multiple-choise-question *ngIf="currentQuestion.questionType == 'multiple'"
         [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
       </app-multiple-choise-question>
+
+      <app-program-question *ngIf="currentQuestion.questionType == 'program'"
+        [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
+      </app-program-question>
     </div>
     <div *ngIf="!this.campaign" class="box"> </div>
   </div>
