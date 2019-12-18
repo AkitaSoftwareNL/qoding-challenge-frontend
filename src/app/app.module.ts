@@ -9,6 +9,7 @@ import { QuestionsService } from 'src/api/questionsService';
 import { OpenQuestionComponent } from './open-question/open-question.component';
 import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { QuizComponent } from './quiz/quiz.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     QuestionsService
