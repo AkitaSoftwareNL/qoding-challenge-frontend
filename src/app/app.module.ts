@@ -10,6 +10,7 @@ import { OpenQuestionComponent } from './open-question/open-question.component';
 import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ProgramQuestionComponent } from './program-question/program-question.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,14 @@ import { ProgramQuestionComponent } from './program-question/program-question.co
     OpenQuestionComponent,
     MultipleChoiseQuestionComponent,
     QuizComponent,
-    ProgramQuestionComponent,
+    ProgramQuestionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     QuestionsService
