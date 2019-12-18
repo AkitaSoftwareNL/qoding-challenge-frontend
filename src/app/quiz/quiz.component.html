@@ -2,8 +2,9 @@
   <div *ngIf="this.campaign" class="row header">
     <h1>{{this.campaign.campaignName}}</h1>
   </div>
+  <app-login *ngIf="this.userUUID === ''"></app-login>
   <div class="row content">
-    <div *ngIf="this.campaign" class="box">
+    <div *ngIf="this.campaign && this.userUUID !== ''" class="box">
       <app-open-question *ngIf="currentQuestion.questionType == 'open'" [questionIndex]="currentQuestionIndex+1"
         [question]="currentQuestion" (notify)="onNext()">
       </app-open-question>

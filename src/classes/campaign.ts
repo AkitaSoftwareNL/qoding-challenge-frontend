@@ -1,7 +1,7 @@
-import { Question } from './question';
+import {Question} from './question';
 
 export class Campaign {
   campaignName: '';
-  participantID: 0;
+  participantID: string;
   questions: Question[];
 }
