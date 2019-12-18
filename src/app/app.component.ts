@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 })
 
 export class AppComponent {
+  elementType: 'url';
+  value: String = 'https://www.techiediaries.com/generate-qrcodes-angular/';
   constructor() {
   }
 
