@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { QuizComponent } from './quiz/quiz.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {QuizComponent} from './quiz/quiz.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/conference', pathMatch: 'full' },
-  { path: 'conference/:id', component: QuizComponent }
+  { path: 'conference/:id', component: QuizComponent },
+  { path: 'conference', component: QuizComponent },
 ];
 
 @NgModule({
