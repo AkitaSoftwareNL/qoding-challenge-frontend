@@ -2,15 +2,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {QuestionsService} from 'src/api/questionsService';
-import {OpenQuestionComponent} from './open-question/open-question.component';
-import {MultipleChoiseQuestionComponent} from './multiple-choise-question/multiple-choise-question.component';
-import {QuizComponent} from './quiz/quiz.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { QuestionsService } from 'src/api/questionsService';
+import { OpenQuestionComponent } from './open-question/open-question.component';
+import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LoginComponent} from './login/login.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
@@ -63,6 +62,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSelectModule,
     MatRadioModule,
     FlexLayoutModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     QuestionsService

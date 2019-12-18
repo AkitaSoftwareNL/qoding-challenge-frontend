@@ -16,6 +16,8 @@ export class QuizComponent {
   currentQuestion: Question;
   campaign: Campaign;
   campaignID: number;
+  endscreen: boolean = false;
+  message: string;
 
   constructor(private route: ActivatedRoute, private questionsService: QuestionsService) {
     this.route.params.subscribe(params => {
@@ -48,10 +50,11 @@ export class QuizComponent {
 
   send() {
     this.questionsService.post(this.campaignID, this.campaign)
-      .subscribe(succes => alert('Dank u voor het meedoen aan ' + this.campaign.campaignName), error => {
+      .subscribe(succes => this.endscreen = true, error => {
         console.error(error);
         alert('Oeps! Er ging wat mis');
       });
+    this.message = 'Bedankt voor het meedoen aan ' + this.campaign.campaignName + '!';
     this.campaign = null;
   }
 }

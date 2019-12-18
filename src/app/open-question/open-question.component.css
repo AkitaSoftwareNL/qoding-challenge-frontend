@@ -22,7 +22,13 @@
   text-align: left;
   padding: 1em;
   width: calc(100% - 2em);
-  margin: 1em 0;
+  margin: 1em 0 0.2em 0;
+}
+
+.app-open-question .hint {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: right;
 }
 
 /* 4k desktop */
