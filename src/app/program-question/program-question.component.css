@@ -24,6 +24,12 @@
     width: calc(100% - 2em);
     margin: 1em 0;
   }
+
+  .app-program-question .hint {
+    margin-top: 0;
+    padding-top: 0;
+    text-align: right;
+  }
   
   /* 4k desktop */
   
