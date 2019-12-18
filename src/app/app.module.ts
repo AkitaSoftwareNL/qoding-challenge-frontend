@@ -8,6 +8,7 @@ import { QuestionsService } from 'src/api/questionsService';
 import { OpenQuestionComponent } from './open-question/open-question.component';
 import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { ProgramQuestionComponent } from './program-question/program-question.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LoginComponent} from './login/login.component';
 import {MatInputModule} from '@angular/material/input';
@@ -35,7 +36,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     OpenQuestionComponent,
     MultipleChoiseQuestionComponent,
     QuizComponent,
-    LoginComponent,
+    ProgramQuestionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
