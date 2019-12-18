@@ -48,11 +48,10 @@ export class QuizComponent {
 
   send() {
     this.questionsService.post(this.campaignID, this.campaign)
-      .subscribe(succes => alert('Dank u voor het meedoen aan ' + this.campaign.campaignName), error => {
+      .subscribe(succes => this.endscreen = true, error => {
         console.error(error);
         alert('Oeps! Er ging wat mis');
       });
-    this.endscreen = true;
     this.message = 'Bedankt voor het meedoen aan ' + this.campaign.campaignName + '!';
     this.campaign = null;
   }
