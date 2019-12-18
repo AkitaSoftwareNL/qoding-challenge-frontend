@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Params, ActivatedRoute } from '@angular/router';
-import { Question } from 'src/classes/question';
-import { QuestionsService } from 'src/api/questionsService';
-import { Campaign } from 'src/classes/campaign';
+import {Component} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {Question} from 'src/classes/question';
+import {QuestionsService} from 'src/api/questionsService';
+import {Campaign} from 'src/classes/campaign';
+import {isNull} from 'util';
 
 @Component({
   selector: 'app-quiz',
@@ -10,6 +11,7 @@ import { Campaign } from 'src/classes/campaign';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent {
+  userUUID = '';
   routeParams: Params;
   currentQuestionIndex = 0;
   currentQuestion: Question;
@@ -18,7 +20,7 @@ export class QuizComponent {
 
   constructor(private route: ActivatedRoute, private questionsService: QuestionsService) {
     this.route.params.subscribe(params => {
-      this.playCampagne(params.id);
+      this.campaignID = params.id;
     });
   }
 
@@ -28,6 +30,7 @@ export class QuizComponent {
     this.questionsService.get(id).subscribe(campaign => {
       this.currentQuestionIndex = 0;
       this.campaign = campaign;
+      this.campaign.participantID = this.userUUID;
       this.currentQuestion = this.campaign.questions[0];
     }, error => {
       console.log(error);
@@ -45,6 +48,7 @@ export class QuizComponent {
   }
 
   send() {
+    console.log(this.campaign);
     this.questionsService.post(this.campaignID, this.campaign)
       .subscribe(succes => alert('Dank u voor het meedoen aan ' + this.campaign.campaignName), error => {
         console.error(error);
@@ -53,4 +57,10 @@ export class QuizComponent {
     this.campaign = null;
   }
 
+  isNull(userUUID: string) {
+    if (isNull(userUUID)) {
+      return false;
+    }
+    return true;
+  }
 }
