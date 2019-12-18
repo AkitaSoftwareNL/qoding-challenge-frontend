@@ -10,7 +10,7 @@ export class ProgramQuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
-  @ViewChild('input') textarea: ElementRef;
+  @ViewChild('input', {static: false}) textarea: ElementRef;
 
   constructor() { }
 
