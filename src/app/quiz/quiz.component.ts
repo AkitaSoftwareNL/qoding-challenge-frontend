@@ -3,7 +3,6 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {Question} from 'src/classes/question';
 import {QuestionsService} from 'src/api/questionsService';
 import {Campaign} from 'src/classes/campaign';
-import {isNull} from 'util';
 
 @Component({
   selector: 'app-quiz',
@@ -48,19 +47,11 @@ export class QuizComponent {
   }
 
   send() {
-    console.log(this.campaign);
     this.questionsService.post(this.campaignID, this.campaign)
       .subscribe(succes => alert('Dank u voor het meedoen aan ' + this.campaign.campaignName), error => {
         console.error(error);
         alert('Oeps! Er ging wat mis');
       });
     this.campaign = null;
-  }
-
-  isNull(userUUID: string) {
-    if (isNull(userUUID)) {
-      return false;
-    }
-    return true;
   }
 }
