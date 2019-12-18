@@ -15,6 +15,7 @@ export class ProgramQuestionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.question.givenAnswer = this.question.startCode;
   }
 
   next() {
