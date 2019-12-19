@@ -13,10 +13,24 @@ export class AuthenticationService {
   doGoogleLogin() {
     return new Promise<any>((resolve, reject) => {
       const provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope('email');
       this.afAuth.auth.signInWithPopup(provider)
         .then(res => {
           resolve(res);
+        }, err => {
+          reject(err);
+        });
+    });
+  }
+
+  doFacebookLogin() {
+    return new Promise<any>((resolve, reject) => {
+      const provider = new firebase.auth.FacebookAuthProvider();
+      this.afAuth.auth
+        .signInWithPopup(provider)
+        .then(res => {
+          resolve(res);
+        }, err => {
+          reject(err);
         });
     });
   }

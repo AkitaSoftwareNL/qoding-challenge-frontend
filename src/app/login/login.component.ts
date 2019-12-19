@@ -54,19 +54,38 @@ export class LoginComponent implements OnInit {
 
   googleLogin() {
     this.authenticationService.doGoogleLogin().then(() => {
-        const participant = new Participant();
-        const currentUser = this.authenticationService.afAuth.auth.currentUser;
-        const name = currentUser.displayName.split(' ');
-        participant.phonenumber = currentUser.phoneNumber;
-        participant.email = currentUser.email;
-        participant.firstname = name[0];
-        participant.insertion = (name.length > 2) ? name[1] + name[name.length - 2] : null;
-        participant.lastname = (name.length > 1) ? name[name.length - 1] : null;
-        this.callPost(participant);
+        this.callPost(this.createParticipantFromSocial());
       },
       err => {
         console.log(err);
       });
+  }
+
+  facebookLogin() {
+    this.authenticationService.doFacebookLogin().then(() => {
+        this.callPost(this.createParticipantFromSocial());
+      },
+      err => {
+        console.log(err);
+      });
+  }
+
+  private createParticipantFromSocial(): Participant {
+    const participant = new Participant();
+    const currentUser = this.authenticationService.afAuth.auth.currentUser;
+    const name = currentUser.displayName.split(' ');
+
+    this.authenticationService.afAuth.user.subscribe(result => {
+      result.providerData.forEach(test => {
+        participant.phonenumber = test.phoneNumber;
+        participant.email = test.email;
+      });
+    });
+
+    participant.firstname = name[0];
+    participant.insertion = (name.length > 2) ? name[1] + name[name.length - 2] : null;
+    participant.lastname = (name.length > 1) ? name[name.length - 1] : null;
+    return participant;
   }
 
   private callPost(participant: Participant) {
