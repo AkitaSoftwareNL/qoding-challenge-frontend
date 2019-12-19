@@ -18,8 +18,8 @@
         fxLayoutGap="10px" fxLayoutGap.xs="0" fxflex="50%" fxflex.xs="80%" novalidate>
     <mat-card *ngIf="loginWithoutSocial !== true" style="text-align: center;">
       <div class="example-button-row" fxLayout="column">
-        <a (click)="googleLogin()" color="warn" mat-raised-button>Login in met Google</a>
-        <a (click)="facebookLogin()" color="primary" mat-raised-button>Login in met Facebook</a>
+        <a (click)="googleLogin()" color="warn" mat-raised-button>Login met Google</a>
+        <a (click)="facebookLogin()" color="primary" mat-raised-button>Login met Facebook</a>
       </div>
       <a (click)="loginWithoutSocial = true">Inloggen zonder socialaccount</a>
     </mat-card>
