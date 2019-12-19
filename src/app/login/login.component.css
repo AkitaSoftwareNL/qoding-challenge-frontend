@@ -5,3 +5,12 @@
   justify-content: center;
   align-items: center;
 }
+
+button:hover {
+  color: #fff;
+}
+
+/* Authentication with socials */
+a.mat-raised-button.mat-button-base {
+  margin-bottom: 10px;
+}

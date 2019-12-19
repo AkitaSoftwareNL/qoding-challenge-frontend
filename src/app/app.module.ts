@@ -2,13 +2,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { QuestionsService } from 'src/api/questionsService';
-import { OpenQuestionComponent } from './open-question/open-question.component';
-import { MultipleChoiseQuestionComponent } from './multiple-choise-question/multiple-choise-question.component';
-import { QuizComponent } from './quiz/quiz.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {QuestionsService} from 'src/api/questionsService';
+import {OpenQuestionComponent} from './open-question/open-question.component';
+import {MultipleChoiseQuestionComponent} from './multiple-choise-question/multiple-choise-question.component';
+import {QuizComponent} from './quiz/quiz.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginComponent} from './login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
@@ -28,6 +28,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatRadioModule,
     FlexLayoutModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
   ],
   providers: [
     QuestionsService

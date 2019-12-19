@@ -3,6 +3,11 @@
   <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm" fx fxLayout fxLayoutAlign="center"
         fxLayoutGap="10px" fxLayoutGap.xs="0" fxflex="50%" fxflex.xs="80%" novalidate>
     <mat-card *ngIf="loginWithoutSocial !== true" style="text-align: center;">
+      <div class="example-button-row" fxLayout="column">
+        <a (click)="googleLogin()" color="warn" mat-raised-button>Login in met Google</a>
+        <a color="primary" mat-raised-button>Login in met Facebook</a>
+        <a mat-raised-button>Login in met GitHub</a>
+      </div>
       <a (click)="loginWithoutSocial = true">Inloggen zonder socialaccount</a>
     </mat-card>
     <mat-card *ngIf="loginWithoutSocial === true" class="shipping-card">
@@ -19,14 +24,11 @@
           </mat-form-field>
           <mat-form-field fxFlex="33%" fxFlex.xs="100%">
             <input formControlName="insertion" matInput placeholder="Tussenvoegsel">
-            <mat-error *ngIf="loginForm.controls['insertion'].hasError('required')">
-              Voornaam is <strong>vereist</strong>
-            </mat-error>
           </mat-form-field>
           <mat-form-field fxFlex="33%" fxFlex.xs="100%">
             <input formControlName="lastname" matInput placeholder="Achternaam">
             <mat-error *ngIf="loginForm.controls['lastname'].hasError('required')">
-              Voornaam is <strong>vereist</strong>
+              Achternaam is <strong>vereist</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -48,6 +50,7 @@
       </mat-card-content>
       <mat-card-actions>
         <button color="primary" mat-raised-button type="submit">Submit</button>
+        <button (click)="loginWithoutSocial = null" color="warn" mat-raised-button type="submit">Terug</button>
       </mat-card-actions>
     </mat-card>
   </form>
