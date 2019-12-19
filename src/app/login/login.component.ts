@@ -29,14 +29,12 @@ export class LoginComponent implements OnInit {
     phonenumber: [null],
   });
   campaignID: number;
-  userCred: Array<any> = [];
   errors: any = null;
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private participantService: ParticipantService, private router: Router,
               private quizComponent: QuizComponent,
               private authenticationService: AuthenticationService) {
-
   }
 
   ngOnInit() {

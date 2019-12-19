@@ -1,8 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { QuestionsService } from 'src/api/questionsService';
-import { Question } from 'src/classes/question';
-import { Subscription } from 'rxjs';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
