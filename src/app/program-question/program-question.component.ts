@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { Question } from 'src/classes/question';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Question} from 'src/classes/question';
 
 @Component({
   selector: 'app-program-question',
@@ -12,7 +12,8 @@ export class ProgramQuestionComponent implements OnInit {
   @Output() notify = new EventEmitter();
   @ViewChild('input', {static: false}) textarea: ElementRef;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.question.givenAnswer = this.question.startCode;

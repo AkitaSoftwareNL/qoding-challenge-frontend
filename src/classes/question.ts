@@ -1,4 +1,4 @@
-import { PossibleAnswer } from './possible-answer';
+import {PossibleAnswer} from './possible-answer';
 
 export class Question {
   constructor(

@@ -7,6 +7,8 @@ import {Subscription} from 'rxjs';
 import {ParticipantService} from '../../api/participant.service';
 import {isNull} from 'util';
 import {QuizComponent} from '../quiz/quiz.component';
+import {AuthenticationService} from '../../api/authentication.service';
+import 'rxjs-compat/add/observable/fromPromise';
 
 @Component({
   selector: 'app-login',
@@ -27,11 +29,12 @@ export class LoginComponent implements OnInit {
     phonenumber: [null],
   });
   campaignID: number;
+  errors: any = null;
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private participantService: ParticipantService, private router: Router,
-              private quizComponent: QuizComponent) {
-
+              private quizComponent: QuizComponent,
+              private authenticationService: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -41,21 +44,62 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(participant: Participant) {
-    console.log(participant);
+    this.errors = null;
     if (participant.email === null && participant.phonenumber === null) {
       alert('U moet uw telefoonnummer of emailadres invullen');
+    } else {
+      this.callPost(participant);
     }
+  }
+
+  googleLogin() {
+    this.errors = null;
+    this.authenticationService.doGoogleLogin().then(() => {
+        this.callPost(this.createParticipantFromSocial());
+      },
+      err => {
+        console.log(err);
+      });
+  }
+
+  facebookLogin() {
+    this.errors = null;
+    this.authenticationService.doFacebookLogin().then(() => {
+        this.callPost(this.createParticipantFromSocial());
+      },
+      err => {
+        console.log(err);
+      });
+  }
+
+  private createParticipantFromSocial(): Participant {
+    const participant = new Participant();
+    const currentUser = this.authenticationService.afAuth.auth.currentUser;
+    const name = currentUser.displayName.split(' ');
+
+    this.authenticationService.afAuth.user.subscribe(result => {
+      result.providerData.forEach(test => {
+        participant.phonenumber = test.phoneNumber;
+        participant.email = test.email;
+      });
+    });
+
+    participant.firstname = name[0];
+    participant.insertion = (name.length > 2) ? name[1] + name[name.length - 2] : null;
+    participant.lastname = (name.length > 1) ? name[name.length - 1] : null;
+    return participant;
+  }
+
+  private callPost(participant: Participant) {
     this.participantService.post(participant, this.quizComponent.campaignID)
       .subscribe(succes => {
-          console.log(succes);
           alert('Beste ' + participant.firstname + ' ' + ((isNull(participant.insertion)) ? '' : participant.insertion) +
             '' + participant.lastname + ', succes met de quiz!');
           this.quizComponent.userUUID = succes.participantID;
           this.quizComponent.playCampagne(this.quizComponent.campaignID);
         },
         error => {
-          console.log(error);
-          alert('Oeps er ging iets mis bij uw deelname, ga na een medewerker van Quintor.');
+          this.errors = error.valueOf().error;
         });
   }
 }
