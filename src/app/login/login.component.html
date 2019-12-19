@@ -1,5 +1,19 @@
 <div class="customWidth">
-
+  <mat-card *ngIf="errors !== null" class="errorMessage">
+    <h3>Er ging iets mis!</h3>
+    <span>
+      Message: {{errors.message}}
+    </span>
+    <span>
+      Details: {{errors.details}}
+    </span>
+    <span>
+      nextAction: {{errors.nextAction}}
+    </span>
+    <span>
+      Support: {{errors.support}}
+    </span>
+  </mat-card>
   <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm" fx fxLayout fxLayoutAlign="center"
         fxLayoutGap="10px" fxLayoutGap.xs="0" fxflex="50%" fxflex.xs="80%" novalidate>
     <mat-card *ngIf="loginWithoutSocial !== true" style="text-align: center;">

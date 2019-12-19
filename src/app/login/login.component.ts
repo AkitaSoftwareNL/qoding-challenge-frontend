@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   });
   campaignID: number;
   userCred: Array<any> = [];
+  errors: any = null;
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private participantService: ParticipantService, private router: Router,
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(participant: Participant) {
+    this.errors = null;
     if (participant.email === null && participant.phonenumber === null) {
       alert('U moet uw telefoonnummer of emailadres invullen');
     } else {
@@ -53,6 +55,7 @@ export class LoginComponent implements OnInit {
   }
 
   googleLogin() {
+    this.errors = null;
     this.authenticationService.doGoogleLogin().then(() => {
         this.callPost(this.createParticipantFromSocial());
       },
@@ -62,6 +65,7 @@ export class LoginComponent implements OnInit {
   }
 
   facebookLogin() {
+    this.errors = null;
     this.authenticationService.doFacebookLogin().then(() => {
         this.callPost(this.createParticipantFromSocial());
       },
@@ -97,7 +101,7 @@ export class LoginComponent implements OnInit {
           this.quizComponent.playCampagne(this.quizComponent.campaignID);
         },
         error => {
-          alert('Oeps er ging iets mis bij uw deelname, ga na een medewerker van Quintor.');
+          this.errors = error.valueOf().error;
         });
   }
 }
