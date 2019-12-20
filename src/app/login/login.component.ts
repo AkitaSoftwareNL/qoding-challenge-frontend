@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   });
   campaignID: number;
   errors: any = null;
+  participantDTO = new Participant();
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private participantService: ParticipantService, private router: Router,
@@ -55,7 +56,8 @@ export class LoginComponent implements OnInit {
   googleLogin() {
     this.errors = null;
     this.authenticationService.doGoogleLogin().then(() => {
-        this.callPost(this.createParticipantFromSocial());
+        this.createParticipantFromSocial();
+        this.callPost(this.participantDTO);
       },
       err => {
         console.log(err);
@@ -65,29 +67,28 @@ export class LoginComponent implements OnInit {
   facebookLogin() {
     this.errors = null;
     this.authenticationService.doFacebookLogin().then(() => {
-        this.callPost(this.createParticipantFromSocial());
+        this.createParticipantFromSocial();
+        this.callPost(this.participantDTO);
       },
       err => {
         console.log(err);
       });
   }
 
-  private createParticipantFromSocial(): Participant {
-    const participant = new Participant();
+  private createParticipantFromSocial(): void {
     const currentUser = this.authenticationService.afAuth.auth.currentUser;
     const name = currentUser.displayName.split(' ');
 
     this.authenticationService.afAuth.user.subscribe(result => {
       result.providerData.forEach(test => {
-        participant.phonenumber = test.phoneNumber;
-        participant.email = test.email;
+        this.participantDTO.phonenumber = test.phoneNumber;
+        this.participantDTO.email = test.email;
+        this.participantDTO.firstname = name[0];
+        this.participantDTO.insertion = (name.length > 2) ? name[1] + name[name.length - 2] : null;
+        this.participantDTO.lastname = (name.length > 1) ? name[name.length - 1] : null;
       });
-    });
 
-    participant.firstname = name[0];
-    participant.insertion = (name.length > 2) ? name[1] + name[name.length - 2] : null;
-    participant.lastname = (name.length > 1) ? name[name.length - 1] : null;
-    return participant;
+    });
   }
 
   private callPost(participant: Participant) {
