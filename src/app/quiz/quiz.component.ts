@@ -25,10 +25,10 @@ export class QuizComponent {
     });
   }
 
-  playCampagne(id: number) {
+  playCampaign(id: number) {
     this.campaignID = id;
     this.campaign = null;
-    this.questionsService.get(id).subscribe(campaign => {
+    this.questionsService.getCampaign(id).subscribe(campaign => {
       this.currentQuestionIndex = 0;
       this.campaign = campaign;
       this.campaign.participantID = this.userUUID;
@@ -49,7 +49,7 @@ export class QuizComponent {
   }
 
   send() {
-    this.questionsService.post(this.campaignID, this.campaign)
+    this.questionsService.postParticipantAnswers(this.campaignID, this.campaign)
       .subscribe(succes => this.endscreen = true, error => {
         console.error(error);
         alert('Oeps! Er ging wat mis');

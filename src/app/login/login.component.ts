@@ -92,12 +92,12 @@ export class LoginComponent implements OnInit {
   }
 
   private callPost(participant: Participant) {
-    this.participantService.post(participant, this.quizComponent.campaignID)
+    this.participantService.postNewParticipant(participant, this.quizComponent.campaignID)
       .subscribe(succes => {
           alert('Beste ' + participant.firstname + ' ' + ((isNull(participant.insertion)) ? '' : participant.insertion) +
             '' + participant.lastname + ', succes met de quiz!');
           this.quizComponent.userUUID = succes.participantID;
-          this.quizComponent.playCampagne(this.quizComponent.campaignID);
+          this.quizComponent.playCampaign(this.quizComponent.campaignID);
         },
         error => {
           this.errors = error.valueOf().error;
