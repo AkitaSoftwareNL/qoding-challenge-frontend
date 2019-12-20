@@ -2,25 +2,26 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 import {Question} from 'src/classes/question';
 
 @Component({
-  selector: 'app-open-question',
-  templateUrl: './open-question.component.html',
-  styleUrls: ['./open-question.component.css']
+  selector: 'app-program-question',
+  templateUrl: './program-question.component.html',
+  styleUrls: ['./program-question.component.css']
 })
-
-export class OpenQuestionComponent implements OnInit {
+export class ProgramQuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
   @ViewChild('input', {static: false}) textarea: ElementRef;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.question.givenAnswer = this.question.startCode;
   }
 
   next() {
     this.notify.emit();
     this.textarea.nativeElement.focus();
   }
+
 }
-
-

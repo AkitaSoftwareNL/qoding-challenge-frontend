@@ -1,0 +1,32 @@
+<div class="main">
+  <div *ngIf="this.campaign" class="row header">
+    <h1>{{this.campaign.campaignName}}</h1>
+  </div>
+  <app-login *ngIf="this.userUUID === ''"></app-login>
+  <div class="row content">
+    <div *ngIf="this.campaign && this.userUUID !== ''" class="box">
+      <app-open-question *ngIf="currentQuestion.questionType == 'open'" [questionIndex]="currentQuestionIndex+1"
+        [question]="currentQuestion" (notify)="onNext()">
+      </app-open-question>
+
+      <app-multiple-choise-question *ngIf="currentQuestion.questionType == 'multiple'"
+        [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
+      </app-multiple-choise-question>
+
+      <app-program-question (notify)="onNext()"
+                            *ngIf="currentQuestion.questionType == 'program'" [questionIndex]="currentQuestionIndex+1"
+                            [question]="currentQuestion">
+      </app-program-question>
+    </div>
+  </div>
+  <div *ngIf="this.endscreen">
+    <div class="row header">
+      <h1>Qoding Challenge</h1>
+    </div>
+    <div class="row content">
+      <div class="endscreen">
+        <p class="message">{{this.message}}</p>
+      </div>
+    </div>
+  </div>
+</div>

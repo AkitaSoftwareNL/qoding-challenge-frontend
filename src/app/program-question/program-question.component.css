@@ -1,12 +1,12 @@
-.app-open-question {
+.app-program-question {
   width: 100%;
-  color: var( --primary-text-color);
+  color: var(--primary-text-color);
   display: flex;
   flex-direction: column;
   padding: 1em 0em;
 }
 
-.app-open-question>* {
+.app-program-question > * {
   width: 100%;
   margin: 0.5em 0em;
   padding: 1em 0;
@@ -14,7 +14,7 @@
   border: none;
 }
 
-.app-open-question textarea {
+.app-program-question textarea {
   background-color: var(--tertiary-color);
   color: var(--tertiary-text-color);
   font-size: 1em;
@@ -22,10 +22,10 @@
   text-align: left;
   padding: 1em;
   width: calc(100% - 2em);
-  margin: 1em 0 0.2em 0;
+  margin: 1em 0;
 }
 
-.app-open-question .hint {
+.app-program-question .hint {
   margin-top: 0;
   padding-top: 0;
   text-align: right;
@@ -33,23 +33,27 @@
 
 /* 4k desktop */
 
-@media only screen and (min-width: 1442px) {}
+@media only screen and (min-width: 1442px) {
+}
 
 /* desktop */
 
-@media only screen and (max-width: 1441px) {}
+@media only screen and (max-width: 1441px) {
+}
 
 /* laptop */
 
-@media only screen and (max-width: 1025px) {}
+@media only screen and (max-width: 1025px) {
+}
 
 /* tablet */
 
 @media only screen and (max-width: 769px) {
-  .app-open-question {
+  .app-program-question {
     padding: 0.25em 0em;
   }
-  .app-open-question>* {
+
+  .app-program-question > * {
     margin: 0.25em 0em;
     padding: 0.5em 0;
   }
@@ -57,4 +61,5 @@
 
 /* phone */
 
-@media only screen and (max-width: 426px) {}
+@media only screen and (max-width: 426px) {
+}
