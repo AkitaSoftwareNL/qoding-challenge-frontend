@@ -13,6 +13,7 @@ export class AuthenticationService {
   doGoogleLogin() {
     return new Promise<any>((resolve, reject) => {
       const provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('email');
       this.afAuth.auth.signInWithPopup(provider)
         .then(res => {
           resolve(res);
@@ -25,6 +26,7 @@ export class AuthenticationService {
   doFacebookLogin() {
     return new Promise<any>((resolve, reject) => {
       const provider = new firebase.auth.FacebookAuthProvider();
+      provider.addScope('email');
       this.afAuth.auth
         .signInWithPopup(provider)
         .then(res => {
