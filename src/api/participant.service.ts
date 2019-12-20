@@ -10,7 +10,7 @@ export class ParticipantService {
   constructor(private http: HttpClient) {
   }
 
-  post(participant: Participant, campaignID: number) {
+  postNewParticipant(participant: Participant, campaignID: number) {
     const url = 'http://localhost:8080/login/' + campaignID;
     const head = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
     const param = new HttpParams();
