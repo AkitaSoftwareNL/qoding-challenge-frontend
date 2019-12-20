@@ -56,8 +56,7 @@ export class LoginComponent implements OnInit {
   googleLogin() {
     this.errors = null;
     this.authenticationService.doGoogleLogin().then(() => {
-        this.createParticipantFromSocial();
-        this.callPost(this.participantDTO);
+      this.createParticipantFromSocial();
       },
       err => {
         console.log(err);
@@ -68,7 +67,6 @@ export class LoginComponent implements OnInit {
     this.errors = null;
     this.authenticationService.doFacebookLogin().then(() => {
         this.createParticipantFromSocial();
-        this.callPost(this.participantDTO);
       },
       err => {
         console.log(err);
@@ -85,7 +83,8 @@ export class LoginComponent implements OnInit {
         this.participantDTO.email = test.email;
         this.participantDTO.firstname = name[0];
         this.participantDTO.insertion = (name.length > 2) ? name[1] + name[name.length - 2] : null;
-        this.participantDTO.lastname = (name.length > 1) ? name[name.length - 1] : null;
+        this.participantDTO.lastname = (name.length > 1) ? name[name.length - 1] : '';
+        this.callPost(this.participantDTO);
       });
 
     });
