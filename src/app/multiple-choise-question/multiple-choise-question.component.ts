@@ -17,7 +17,7 @@ export class MultipleChoiseQuestionComponent implements OnInit {
   }
 
   next(answer) {
-    this.question.givenAnswer = answer;
+    this.question.givenAnswer[0] = answer;
     this.notify.emit();
   }
 }
