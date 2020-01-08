@@ -1,6 +1,6 @@
 :root {
   --primary-color: #c23350;
-  --secondary-color: #111111;
+  --secondary-color: #121212;
   --tertiary-color: #FFFFFF;
   --primary-text-color: #FFFFFF;
   --secondary-text-color: #FFFFFF;
@@ -29,7 +29,7 @@ button {
 }
 
 button:hover, button:hover *, button:focus, button:focus * {
-  background-color: var(--secondary-color);
+  background-color: darkgrey !important;
   color: var(--secondary-text-color);
 }
 

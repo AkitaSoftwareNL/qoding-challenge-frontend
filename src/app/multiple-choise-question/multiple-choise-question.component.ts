@@ -11,13 +11,30 @@ export class MultipleChoiseQuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
+  givenAnswers = Array();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  next(answer) {
-    this.question.givenAnswer[0] = answer;
+  update(answer) {
+    if (this.givenAnswers.indexOf(answer) !== -1) {
+      this.givenAnswers.splice(this.givenAnswers.indexOf(answer), 1);
+    } else {
+      this.givenAnswers.push(answer);
+    }
+  }
+  next() {
+    this.question.givenAnswer = this.givenAnswers;
     this.notify.emit();
+  }
+
+  switch(answer) {
+    if (this.givenAnswers.indexOf(answer) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

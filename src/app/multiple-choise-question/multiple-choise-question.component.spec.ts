@@ -18,7 +18,7 @@ describe('MultipleChoiseQuestionComponent', () => {
     fixture = TestBed.createComponent(MultipleChoiseQuestionComponent);
     component = fixture.componentInstance;
     component.questionIndex = 1;
-    component.question = new Question(0, 'multiple', 'Question', 'Attachent', 0, 'given', []);
+    component.question = new Question(0, 'multiple', 'Question', 'multiple', 'Attachent', 'given', [], [], 1);
     fixture.detectChanges();
   });
 
