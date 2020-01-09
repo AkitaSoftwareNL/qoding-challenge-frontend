@@ -28,9 +28,12 @@ button {
   color: var(--tertiary-text-color);
 }
 
-button:hover, button:hover *, button:focus, button:focus * {
-  background-color: darkgrey !important;
-  color: var(--secondary-text-color);
+button:hover, button:focus {
+  /*background-color: var(--secondary-color);*/
+  /*color: var(--secondary-text-color);*/
+
+  border-style: solid !important;
+  border-width: 4px;
 }
 
 p {
