@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MultipleChoiseQuestionComponent } from './multiple-choise-question.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question.component';
 import { Question } from 'src/classes/question';
 
-describe('MultipleChoiseQuestionComponent', () => {
-  let component: MultipleChoiseQuestionComponent;
-  let fixture: ComponentFixture<MultipleChoiseQuestionComponent>;
+describe('MultipleChoiceQuestionComponent', () => {
+  let component: MultipleChoiceQuestionComponent;
+  let fixture: ComponentFixture<MultipleChoiceQuestionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MultipleChoiseQuestionComponent]
+      declarations: [MultipleChoiceQuestionComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MultipleChoiseQuestionComponent);
+    fixture = TestBed.createComponent(MultipleChoiceQuestionComponent);
     component = fixture.componentInstance;
     component.questionIndex = 1;
     component.question = new Question(0, 'multiple', 'Question', 'Attachent', 0, 'given', []);
