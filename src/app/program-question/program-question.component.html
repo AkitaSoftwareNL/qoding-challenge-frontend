@@ -1,7 +1,7 @@
 <div class="app-program-question">
   <h1>{{questionIndex}} : {{question.question}}</h1>
   <p *ngIf="question.attachment != ''">{{question.attachment}}</p>
-  <textarea #input [(ngModel)]="question.givenAnswer[0]" autofocus cols="30" rows="10"></textarea>
+  <textarea #input [(ngModel)]="question.givenAnswers[0]" autofocus cols="30" rows="10"></textarea>
   <p class="hint">{{input.value.length}} / 1024</p>
   <button (click)="next()">
     <h2>Volgende vraag</h2>

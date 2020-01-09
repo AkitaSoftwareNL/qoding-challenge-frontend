@@ -1,7 +1,7 @@
 <div class="app-multiple-choise-question">
   <h1>{{questionIndex}} : {{question.question}}</h1>
   <p *ngIf="question.attachment != ''">{{question.attachment}}</p>
-  <!-- <textarea #input autofocus cols="30" [(ngModel)]="question.givenAnswer" rows="10"
+  <!-- <textarea #input autofocus cols="30" [(ngModel)]="question.givenAnswers" rows="10"
     placeholder="Type hier uw antwoord"></textarea> -->
 
   <button *ngFor="let possibility of question.possibleAnswers" [className]="switch(possibility.possibleAnswer)  ? 'select-button-style' : ''" (click)="Onclick(possibility.possibleAnswer, question.hasMultipleAnswers)">
@@ -10,7 +10,7 @@
     </p>
   </button>
 
-  <button *ngIf="question.possibleAnswers" (click)="next()" class="margin-next">
+  <button *ngIf="question.hasMultipleAnswers" (click)="next()" class="margin-next">
     <p>Volgende vraag</p>
   </button>
 </div>

@@ -29,6 +29,7 @@ export class QuizComponent {
     this.campaignID = id;
     this.campaign = null;
     this.questionsService.getCampaign(id).subscribe(campaign => {
+      console.log(campaign);
       this.currentQuestionIndex = 0;
       this.campaign = campaign;
       this.campaign.participantID = this.userUUID;
