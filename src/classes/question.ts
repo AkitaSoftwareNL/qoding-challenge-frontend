@@ -11,6 +11,7 @@ export class Question {
     public possibleAnswers: PossibleAnswer[],
     public givenAnswer: string[],
     public stateID: number,
+    public correctAmountOfQuestions
   ) { }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Question } from 'src/classes/question';
+import {send} from "q";
 
 @Component({
   selector: 'app-multiple-choise-question',
@@ -18,6 +19,19 @@ export class MultipleChoiseQuestionComponent implements OnInit {
   ngOnInit() {
   }
 
+  Onclick(answer, correctAmountOfQuestions) {
+    if (correctAmountOfQuestions > 1) {
+      this.update(answer);
+    } else {
+      this.send(answer);
+    }
+  }
+
+  send(answer) {
+    this.question.givenAnswer[0] = answer;
+    this.notify.emit();
+  }
+
   update(answer) {
     if (this.givenAnswers.indexOf(answer) !== -1) {
       this.givenAnswers.splice(this.givenAnswers.indexOf(answer), 1);
@@ -25,6 +39,7 @@ export class MultipleChoiseQuestionComponent implements OnInit {
       this.givenAnswers.push(answer);
     }
   }
+
   next() {
     this.question.givenAnswer = this.givenAnswers;
     this.notify.emit();
