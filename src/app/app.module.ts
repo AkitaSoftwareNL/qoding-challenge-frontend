@@ -6,7 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {QuestionsService} from 'src/api/questionsService';
 import {OpenQuestionComponent} from './open-question/open-question.component';
-import {MultipleChoiseQuestionComponent} from './multiple-choise-question/multiple-choise-question.component';
+import {MultipleChoiceQuestionComponent} from './multiple-choice-question/multiple-choice-question.component';
 import {QuizComponent} from './quiz/quiz.component';
 import {ProgramQuestionComponent} from './program-question/program-question.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -38,7 +38,7 @@ import {environment} from '../environments/environment';
   declarations: [
     AppComponent,
     OpenQuestionComponent,
-    MultipleChoiseQuestionComponent,
+    MultipleChoiceQuestionComponent,
     QuizComponent,
     ProgramQuestionComponent,
     LoginComponent

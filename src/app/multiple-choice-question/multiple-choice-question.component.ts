@@ -3,11 +3,11 @@ import { Question } from 'src/classes/question';
 
 @Component({
   selector: 'app-multiple-choise-question',
-  templateUrl: './multiple-choise-question.component.html',
-  styleUrls: ['./multiple-choise-question.component.css']
+  templateUrl: './multiple-choice-question.component.html',
+  styleUrls: ['./multiple-choice-question.component.css']
 })
 
-export class MultipleChoiseQuestionComponent implements OnInit {
+export class MultipleChoiceQuestionComponent implements OnInit {
   @Input() question: Question;
   @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
