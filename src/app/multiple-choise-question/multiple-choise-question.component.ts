@@ -28,8 +28,6 @@ export class MultipleChoiseQuestionComponent implements OnInit {
   }
 
   send(answer) {
-    console.log(answer);
-    console.log(this.question.givenAnswers);
     this.question.givenAnswers[0] = answer;
     this.notify.emit();
   }
