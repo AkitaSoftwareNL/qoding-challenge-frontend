@@ -4,13 +4,13 @@
   <!-- <textarea #input autofocus cols="30" [(ngModel)]="question.givenAnswer" rows="10"
     placeholder="Type hier uw antwoord"></textarea> -->
 
-  <button *ngFor="let possibility of question.possibleAnswers" [className]="switch(possibility.possibleAnswer)  ? 'select-button-style' : ''" (click)="Onclick(possibility.possibleAnswer, question.correctAmountOfQuestions)">
+  <button *ngFor="let possibility of question.possibleAnswers" [className]="switch(possibility.possibleAnswer)  ? 'select-button-style' : ''" (click)="Onclick(possibility.possibleAnswer, question.hasMultipleAnswers)">
     <p>
       {{possibility.possibleAnswer}}
     </p>
   </button>
 
-  <button *ngFor="question.possibleAnswers > 1" (click)="next()" class="margin-next">
+  <button *ngIf="question.possibleAnswers" (click)="next()" class="margin-next">
     <p>Volgende vraag</p>
   </button>
 </div>

@@ -20,7 +20,7 @@ export class MultipleChoiseQuestionComponent implements OnInit {
   }
 
   Onclick(answer, correctAmountOfQuestions) {
-    if (correctAmountOfQuestions > 1) {
+    if (correctAmountOfQuestions) {
       this.update(answer);
     } else {
       this.send(answer);
