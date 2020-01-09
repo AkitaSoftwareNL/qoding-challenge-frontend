@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef }
 import { Question } from 'src/classes/question';
 
 @Component({
-  selector: 'app-multiple-choise-question',
+  selector: 'app-multiple-choice-question',
   templateUrl: './multiple-choice-question.component.html',
   styleUrls: ['./multiple-choice-question.component.css']
 })

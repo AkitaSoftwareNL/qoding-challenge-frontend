@@ -9,9 +9,9 @@
         [question]="currentQuestion" (notify)="onNext()">
       </app-open-question>
 
-      <app-multiple-choise-question *ngIf="currentQuestion.questionType == 'multiple'"
-        [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
-      </app-multiple-choise-question>
+      <app-multiple-choice-question *ngIf="currentQuestion.questionType == 'multiple'"
+                                    [questionIndex]="currentQuestionIndex+1" [question]="currentQuestion" (notify)="onNext()">
+      </app-multiple-choice-question>
 
       <app-program-question (notify)="onNext()"
                             *ngIf="currentQuestion.questionType == 'program'" [questionIndex]="currentQuestionIndex+1"
