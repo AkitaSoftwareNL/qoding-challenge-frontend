@@ -19,8 +19,6 @@
 }
 
 .select-button-style{
-  /*background-color: var(--secondary-color);*/
-  /*color: var(--secondary-text-color);*/
   background-color: var(--secondary-color);
   color: var(--secondary-text-color);
 }
