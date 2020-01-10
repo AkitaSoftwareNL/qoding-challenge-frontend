@@ -14,6 +14,15 @@
   border: none;
 }
 
+.margin-next{
+  margin-top: 2em !important;
+}
+
+.select-button-style{
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
+}
+
 /* 4k desktop */
 
 @media only screen and (min-width: 1442px) {}
@@ -41,3 +50,12 @@
 /* phone */
 
 @media only screen and (max-width: 426px) {}
+
+
+button:hover {
+  background-color: #e2e2e2;
+}
+
+button.select-button-style:hover  {
+ background-color: #424242;
+}

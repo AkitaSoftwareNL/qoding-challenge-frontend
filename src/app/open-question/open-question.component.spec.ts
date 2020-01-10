@@ -19,7 +19,7 @@ describe('OpenQuestionComponent', () => {
     fixture = TestBed.createComponent(OpenQuestionComponent);
     component = fixture.componentInstance;
     component.questionIndex = 1;
-    component.question = new Question(0, 'open', 'Question', 'Attachent', 0, 'given', []);
+    component.question = new Question(0, 'open', 'Question', 'Attachent', 0, 'given', [], [], 1, 1);
     fixture.detectChanges();
   });
 
