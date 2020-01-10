@@ -49,6 +49,7 @@ export class QuizComponent {
   }
 
   send() {
+    console.log(this.campaign)
     this.questionsService.postParticipantAnswers(this.campaignID, this.campaign)
       .subscribe(succes => this.endscreen = true, error => {
         console.error(error);
