@@ -1,19 +1,4 @@
 <div class="customWidth">
-  <mat-card *ngIf="errors !== null" class="errorMessage">
-    <h3>Er ging iets mis!</h3>
-    <span>
-      Message: {{errors.message}}
-    </span>
-    <span>
-      Details: {{errors.details}}
-    </span>
-    <span>
-      nextAction: {{errors.nextAction}}
-    </span>
-    <span>
-      Support: {{errors.support}}
-    </span>
-  </mat-card>
   <mat-card *ngIf="loginWithoutSocial !== true" style="text-align: center;">
     <div class="example-button-row" fxLayout="column">
       <a class="button" (click)="googleLogin()" color="warn" mat-raised-button>Inloggen met Google</a>
@@ -21,6 +6,7 @@
     </div>
     <a class="link" (click)="loginWithoutSocial = true">Inloggen zonder socialaccount</a>
   </mat-card>
+
     <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm" fx fxLayout fxLayoutAlign="center" *ngIf="loginWithoutSocial === true"
           fxLayoutGap="10px" fxLayoutGap.xs="0" fxflex="50%" fxflex.xs="80%" novalidate>
       <mat-card class="shipping-card">
@@ -61,7 +47,7 @@
             </mat-form-field>
           </div>
         </mat-card-content>
-          <button color="accent" class="button submit" mat-raised-button type="submit">Quiz Starten</button>
+          <button color="accent" [disabled]="!formIsValid()" class="button submit" mat-raised-button type="submit">Quiz Starten</button>
         <mat-divider></mat-divider>
         <div class="example-button-row" fxLayout="column">
           <span style="height: 10px; width: 100%"></span>
@@ -70,6 +56,5 @@
           <a class="button" (click)="facebookLogin()" color="primary" mat-raised-button>Inloggen met Facebook</a>
         </div>
       </mat-card>
-
     </form>
 </div>

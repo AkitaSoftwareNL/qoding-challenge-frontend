@@ -24,15 +24,14 @@ export class LoginComponent implements OnInit {
   loginWithoutSocial = null;
   routeSub: Subscription;
   loginForm = this.formBuilder.group({
-    firstname: [null, Validators.required, Validators.maxLength(100)],
-    insertion: [null, Validators.maxLength(100)],
-    lastname: [null, Validators.required, Validators.maxLength(100)],
-    email: [null, Validators.required, Validators.email, Validators.maxLength(100)],
+    firstname: ['', Validators.required, Validators.maxLength(100)],
+    insertion: ['', Validators.maxLength(100)],
+    lastname: ['', Validators.required, Validators.maxLength(100)],
+    email: ['', Validators.required, Validators.email, Validators.maxLength(100)],
     // tslint:disable-next-line:max-line-length
-    phonenumber: [null, Validators.required, Validators.minLength(10), Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(16)],
+    phonenumber: ['', Validators.required, Validators.minLength(10), Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(16)],
   });
   campaignID: number;
-  errors: any = null;
   participantDTO = new Participant();
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
@@ -48,15 +47,24 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  public formIsValid() {
+    const controls = this.loginForm.controls;
+    for (const name in controls) {
+      if (controls[name].invalid) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   onSubmit(participant: Participant) {
-    this.errors = null;
-    if (this.loginForm.valid) {
+    console.log(participant);
+    if (this.formIsValid()) {
       this.callPost(participant);
     }
   }
 
   googleLogin() {
-    this.errors = null;
     this.authenticationService.doGoogleLogin().then(() => {
       this.createParticipantFromSocial();
       },
@@ -66,7 +74,6 @@ export class LoginComponent implements OnInit {
   }
 
   facebookLogin() {
-    this.errors = null;
     this.authenticationService.doFacebookLogin().then(() => {
         this.createParticipantFromSocial();
       },
@@ -101,7 +108,8 @@ export class LoginComponent implements OnInit {
           this.quizComponent.playCampaign(this.quizComponent.campaignID);
         },
         error => {
-          this.errors = error.valueOf().error;
+          this.toast.warning(error.valueOf().error);
+          console.log(error.valueOf().error);
         });
   }
 }

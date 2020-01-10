@@ -63,3 +63,7 @@
 
 @media only screen and (max-width: 426px) {
 }
+
+button:hover {
+  background-color: #e2e2e2;
+}

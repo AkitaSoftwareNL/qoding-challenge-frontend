@@ -50,3 +50,12 @@
 /* phone */
 
 @media only screen and (max-width: 426px) {}
+
+
+button:hover {
+  background-color: #e2e2e2;
+}
+
+button.select-button-style:hover  {
+ background-color: #424242;
+}
