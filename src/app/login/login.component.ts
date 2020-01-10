@@ -9,6 +9,8 @@ import {isNull} from 'util';
 import {QuizComponent} from '../quiz/quiz.component';
 import {AuthenticationService} from '../../api/authentication.service';
 import 'rxjs-compat/add/observable/fromPromise';
+import {ToastrService} from 'ngx-toastr';
+import validate = WebAssembly.validate;
 
 @Component({
   selector: 'app-login',
@@ -22,11 +24,12 @@ export class LoginComponent implements OnInit {
   loginWithoutSocial = null;
   routeSub: Subscription;
   loginForm = this.formBuilder.group({
-    firstname: [null, Validators.required],
-    insertion: [null],
-    lastname: [null, Validators.required],
-    email: [null],
-    phonenumber: [null],
+    firstname: [null, Validators.required, Validators.maxLength(100)],
+    insertion: [null, Validators.maxLength(100)],
+    lastname: [null, Validators.required, Validators.maxLength(100)],
+    email: [null, Validators.required, Validators.email, Validators.maxLength(100)],
+    // tslint:disable-next-line:max-line-length
+    phonenumber: [null, Validators.required, Validators.minLength(10), Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(16)],
   });
   campaignID: number;
   errors: any = null;
@@ -35,7 +38,8 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private participantService: ParticipantService, private router: Router,
               private quizComponent: QuizComponent,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private toast: ToastrService) {
   }
 
   ngOnInit() {
@@ -46,9 +50,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(participant: Participant) {
     this.errors = null;
-    if (participant.email === null && participant.phonenumber === null) {
-      alert('U moet uw telefoonnummer of emailadres invullen');
-    } else {
+    if (this.loginForm.valid) {
       this.callPost(participant);
     }
   }
@@ -93,7 +95,7 @@ export class LoginComponent implements OnInit {
   private callPost(participant: Participant) {
     this.participantService.postNewParticipant(participant, this.quizComponent.campaignID)
       .subscribe(succes => {
-          alert('Beste ' + participant.firstname + ' ' + ((isNull(participant.insertion)) ? '' : participant.insertion) +
+          this.toast.info('Beste ' + participant.firstname + ' ' + ((isNull(participant.insertion)) ? '' : participant.insertion) +
             '' + participant.lastname + ', succes met de quiz!');
           this.quizComponent.userUUID = succes.participantID;
           this.quizComponent.playCampaign(this.quizComponent.campaignID);
