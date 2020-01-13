@@ -3,6 +3,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {Question} from 'src/classes/question';
 import {QuestionsService} from 'src/api/questionsService';
 import {Campaign} from 'src/classes/campaign';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-quiz',
@@ -16,10 +17,10 @@ export class QuizComponent {
   currentQuestion: Question;
   campaign: Campaign;
   campaignID: number;
-  endscreen: boolean = false;
+  endscreen = false;
   message: string;
 
-  constructor(private route: ActivatedRoute, private questionsService: QuestionsService) {
+  constructor(private route: ActivatedRoute, private questionsService: QuestionsService, private toast: ToastrService) {
     this.route.params.subscribe(params => {
       this.campaignID = params.id;
     });
@@ -49,11 +50,11 @@ export class QuizComponent {
   }
 
   send() {
-    console.log(this.campaign)
+    this.endscreen = true;
     this.questionsService.postParticipantAnswers(this.campaignID, this.campaign)
-      .subscribe(succes => this.endscreen = true, error => {
+      .subscribe(succes =>  error => {
         console.error(error);
-        alert('Oeps! Er ging wat mis');
+        alert('Campagne kon niet worden opgeslagen.');
       });
     this.message = 'Bedankt voor het meedoen aan ' + this.campaign.campaignName + '!';
     this.campaign = null;
