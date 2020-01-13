@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Question } from 'src/classes/question';
-import {send} from "q";
+import { send } from "q";
 
 @Component({
   selector: 'app-multiple-choice-question',
@@ -42,6 +42,7 @@ export class MultipleChoiceQuestionComponent implements OnInit {
 
   next() {
     this.question.givenAnswers = this.givenAnswers;
+    this.givenAnswers = [];
     this.notify.emit();
   }
 

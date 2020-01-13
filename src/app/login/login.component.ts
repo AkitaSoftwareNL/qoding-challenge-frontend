@@ -120,8 +120,8 @@ export class LoginComponent implements OnInit {
           this.quizComponent.playCampaign(this.quizComponent.campaignID);
         },
         error => {
-          this.toast.warning(error.valueOf().error);
-          console.log(error.valueOf().error);
+          this.toast.warning(error.valueOf().error.message);
+          console.log(error.valueOf().error.message);
         });
   }
 }
