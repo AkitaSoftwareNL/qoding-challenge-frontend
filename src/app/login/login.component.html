@@ -1,4 +1,4 @@
-<div class="customWidth">
+<div class="customWidth" *ngIf="this.quizComponent.campaign">
   <mat-card *ngIf="loginWithoutSocial !== true" style="text-align: center;">
     <div class="example-button-row" fxLayout="column">
       <a class="button" (click)="googleLogin()" color="warn" mat-raised-button>Inloggen met Google</a>
@@ -58,3 +58,15 @@
       </mat-card>
     </form>
 </div>
+<!--<div class="main">
+  <div *ngIf="!this.quizComponent.campaign">
+    <div class="row header">
+      <h1>Qoding Challenge</h1>
+    </div>
+    <div class="row content">
+      <div class="campaignNotFound">
+        <p class="message">Deze campagne bestaat niet.</p>
+      </div>
+    </div>
+  </div>
+</div>-->

@@ -11,6 +11,8 @@ import {AuthenticationService} from '../../api/authentication.service';
 import 'rxjs-compat/add/observable/fromPromise';
 import {ToastrService} from 'ngx-toastr';
 import validate = WebAssembly.validate;
+import {QuestionsService} from "../../api/questionsService";
+import {timeout} from "rxjs/operators";
 
 @Component({
   selector: 'app-login',
@@ -38,12 +40,22 @@ export class LoginComponent implements OnInit {
               private participantService: ParticipantService, private router: Router,
               private quizComponent: QuizComponent,
               private authenticationService: AuthenticationService,
+              private questionService: QuestionsService,
               private toast: ToastrService) {
   }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
-      this.campaignID = params.campaignID;
+      this.campaignID = params.id;
+      this.questionService.getCampaign(this.campaignID).subscribe(campaign => {
+        this.quizComponent.campaign = campaign;
+      },
+        error => {
+        console.log(error);
+        this.toast.error(error.valueOf().error.message, 'Campaign not found', {
+            timeOut: 60000
+          });
+        });
     });
   }
 

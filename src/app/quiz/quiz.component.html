@@ -1,6 +1,7 @@
 <div class="main">
-  <div *ngIf="this.campaign" class="row header">
-    <h1>{{this.campaign.campaignName}}</h1>
+  <div class="row header">
+    <h1 *ngIf="this.campaign">{{this.campaign.campaignName}}</h1>
+    <h1 *ngIf="!this.campaign || (!this.endscreen && !this.campaign)">Qoding challenge</h1>
   </div>
   <app-login *ngIf="this.userUUID === ''"></app-login>
   <div class="row content">
@@ -20,9 +21,9 @@
     </div>
   </div>
   <div *ngIf="this.endscreen">
-    <div class="row header">
+    <!--<div class="row header">
       <h1>Qoding Challenge</h1>
-    </div>
+    </div>-->
     <div class="row content">
       <div class="endscreen">
         <p class="message">{{this.message}}</p>
