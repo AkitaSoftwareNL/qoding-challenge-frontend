@@ -6,7 +6,7 @@ import {Question} from 'src/classes/question';
   templateUrl: './program-question.component.html',
   styleUrls: ['./program-question.component.css']
 })
-export class ProgramQuestionComponent implements OnInit {
+export class ProgramQuestionComponent{
   @Input() question: Question;
   @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
@@ -15,11 +15,8 @@ export class ProgramQuestionComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-    this.question.givenAnswers[0] = this.question.startCode;
-  }
-
   next() {
+    this.question.givenAnswers[0] = this.question.startCode;
     this.notify.emit();
     this.textarea.nativeElement.focus();
   }
