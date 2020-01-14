@@ -6,7 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {QuestionsService} from 'src/api/questionsService';
 import {OpenQuestionComponent} from './open-question/open-question.component';
-import {MultipleChoiseQuestionComponent} from './multiple-choise-question/multiple-choise-question.component';
+import {MultipleChoiceQuestionComponent} from './multiple-choice-question/multiple-choice-question.component';
 import {QuizComponent} from './quiz/quiz.component';
 import {ProgramQuestionComponent} from './program-question/program-question.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -33,12 +33,13 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from '../environments/environment';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
     OpenQuestionComponent,
-    MultipleChoiseQuestionComponent,
+    MultipleChoiceQuestionComponent,
     QuizComponent,
     ProgramQuestionComponent,
     LoginComponent
@@ -73,6 +74,7 @@ import {environment} from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    ToastrModule.forRoot()
   ],
   providers: [
     QuestionsService

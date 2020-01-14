@@ -1,70 +1,72 @@
-<div class="customWidth">
-  <mat-card *ngIf="errors !== null" class="errorMessage">
-    <h3>Er ging iets mis!</h3>
-    <span>
-      Message: {{errors.message}}
-    </span>
-    <span>
-      Details: {{errors.details}}
-    </span>
-    <span>
-      nextAction: {{errors.nextAction}}
-    </span>
-    <span>
-      Support: {{errors.support}}
-    </span>
+<div class="customWidth" *ngIf="this.quizComponent.campaign">
+  <mat-card *ngIf="loginWithoutSocial !== true" style="text-align: center;">
+    <div class="example-button-row" fxLayout="column">
+      <a class="button" (click)="googleLogin()" color="warn" mat-raised-button>Inloggen met Google</a>
+      <a class="button" (click)="facebookLogin()" color="primary" mat-raised-button>Inloggen met Facebook</a>
+    </div>
+    <a class="link" (click)="loginWithoutSocial = true">Inloggen zonder socialaccount</a>
   </mat-card>
-  <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm" fx fxLayout fxLayoutAlign="center"
-        fxLayoutGap="10px" fxLayoutGap.xs="0" fxflex="50%" fxflex.xs="80%" novalidate>
-    <mat-card *ngIf="loginWithoutSocial !== true" style="text-align: center;">
-      <div class="example-button-row" fxLayout="column">
-        <a (click)="googleLogin()" color="warn" mat-raised-button>Inloggen met Google</a>
-        <a (click)="facebookLogin()" color="primary" mat-raised-button>Inloggen met Facebook</a>
-      </div>
-      <a (click)="loginWithoutSocial = true">Inloggen zonder socialaccount</a>
-    </mat-card>
-    <mat-card *ngIf="loginWithoutSocial === true" class="shipping-card">
-      <mat-card-header>
-        <mat-card-title>{{title}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div fxLayout.xs="column">
-          <mat-form-field fxFlex="33%" fxFlex.xs="100%">
-            <input formControlName="firstname" matInput placeholder="Voornaam">
-            <mat-error *ngIf="loginForm.controls['firstname'].hasError('required')">
-              Voornaam is <strong>vereist</strong>
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field fxFlex="33%" fxFlex.xs="100%">
-            <input formControlName="insertion" matInput placeholder="Tussenvoegsel">
-          </mat-form-field>
-          <mat-form-field fxFlex="33%" fxFlex.xs="100%">
-            <input formControlName="lastname" matInput placeholder="Achternaam">
-            <mat-error *ngIf="loginForm.controls['lastname'].hasError('required')">
-              Achternaam is <strong>vereist</strong>
-            </mat-error>
-          </mat-form-field>
+
+    <form (ngSubmit)="onSubmit(loginForm.value)" [formGroup]="loginForm" fx fxLayout fxLayoutAlign="center" *ngIf="loginWithoutSocial === true"
+          fxLayoutGap="10px" fxLayoutGap.xs="0" fxflex="50%" fxflex.xs="80%" novalidate>
+      <mat-card class="shipping-card">
+        <mat-card-header>
+          <mat-card-title>{{title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div fxLayout.xs="column">
+            <mat-form-field fxFlex="33%" fxFlex.xs="100%">
+              <input formControlName="firstname" matInput placeholder="Voornaam">
+              <mat-error *ngIf="loginForm.controls['firstname'].hasError('required')">
+                Voornaam is <strong>vereist</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="33%" fxFlex.xs="100%">
+              <input formControlName="insertion" matInput placeholder="Tussenvoegsel">
+            </mat-form-field>
+            <mat-form-field fxFlex="33%" fxFlex.xs="100%">
+              <input formControlName="lastname" matInput placeholder="Achternaam">
+              <mat-error *ngIf="loginForm.controls['lastname'].hasError('required')">
+                Achternaam is <strong>vereist</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+            <mat-form-field fxFlex="50%">
+              <input formControlName="phonenumber" matInput pattern="^[+]?[0-9]{9,12}$" placeholder="Telefoonnummer"
+                     type="tel">
+              <mat-error *ngIf="loginForm.controls['phonenumber'].errors">
+                Voer een correct <strong>Telefoonnummer</strong> in
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="50%">
+              <input email formControlName="email" matInput placeholder="Emailadres">
+              <mat-error *ngIf="loginForm.controls['email'].errors">
+                Voer een correct <strong>emailadres</strong> in
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+          <button color="accent" [disabled]="!formIsValid()" class="button submit" mat-raised-button type="submit">Quiz Starten</button>
+        <mat-divider></mat-divider>
+        <div class="example-button-row" fxLayout="column">
+          <span style="height: 10px; width: 100%"></span>
+          <span class="social-title">Of toch met...</span>
+          <a class="button" (click)="googleLogin()" color="warn" mat-raised-button>Inloggen met Google</a>
+          <a class="button" (click)="facebookLogin()" color="primary" mat-raised-button>Inloggen met Facebook</a>
         </div>
-        <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-          <mat-form-field fxFlex="50%">
-            <input formControlName="phonenumber" matInput pattern="^[+]?[0-9]{9,12}$" placeholder="Telefoonnummer"
-                   type="tel">
-            <mat-error *ngIf="loginForm.controls['phonenumber'].errors">
-              Uw telefoonnummer is <strong>niet</strong> correct
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field fxFlex="50%">
-            <input email formControlName="email" matInput placeholder="Emailadres">
-            <mat-error *ngIf="loginForm.controls['email'].errors">
-              Uw emailadres is <strong>niet</strong> correct
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </mat-card-content>
-      <mat-card-actions>
-        <button color="primary" mat-raised-button type="submit">Submit</button>
-        <button (click)="loginWithoutSocial = null" color="warn" mat-raised-button type="submit">Terug</button>
-      </mat-card-actions>
-    </mat-card>
-  </form>
+      </mat-card>
+    </form>
 </div>
+<!--<div class="main">
+  <div *ngIf="!this.quizComponent.campaign">
+    <div class="row header">
+      <h1>Qoding Challenge</h1>
+    </div>
+    <div class="row content">
+      <div class="campaignNotFound">
+        <p class="message">Deze campagne bestaat niet.</p>
+      </div>
+    </div>
+  </div>
+</div>-->

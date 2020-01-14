@@ -6,8 +6,32 @@
   align-items: center;
 }
 
-button:hover {
-  color: #fff;
+.link {
+  color: cornflowerblue;
+}
+
+.link:hover, link:focus {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.back-btn {
+  background-color: darkgrey;
+}
+
+.button {
+  color: #FFFFFF;
+}
+
+.button.submit {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.social-title {
+  color: grey;
+  font-size: 12px;
+  margin: 0 auto 10px;
 }
 
 /* Authentication with socials */
@@ -23,4 +47,45 @@ mat-card.errorMessage.mat-card {
 
 mat-card.errorMessage.mat-card span {
   display: block;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.main .row.header {
+  flex: 0 1 auto;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: larger;
+  text-align: center;
+  padding: 1ex;
+  box-shadow: 0px 4px 4px black;
+}
+
+.main .row.content {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campaignNotFound {
+  background-color: white;
+  margin-top: 10em;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  min-height: 80%;
+  border-radius: 1em;
+  box-shadow: 0px 4px 4px black;
+}
+
+.message {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }

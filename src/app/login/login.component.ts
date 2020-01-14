@@ -9,6 +9,10 @@ import {isNull} from 'util';
 import {QuizComponent} from '../quiz/quiz.component';
 import {AuthenticationService} from '../../api/authentication.service';
 import 'rxjs-compat/add/observable/fromPromise';
+import {ToastrService} from 'ngx-toastr';
+import validate = WebAssembly.validate;
+import {QuestionsService} from "../../api/questionsService";
+import {timeout} from "rxjs/operators";
 
 @Component({
   selector: 'app-login',
@@ -22,39 +26,57 @@ export class LoginComponent implements OnInit {
   loginWithoutSocial = null;
   routeSub: Subscription;
   loginForm = this.formBuilder.group({
-    firstname: [null, Validators.required],
-    insertion: [null],
-    lastname: [null, Validators.required],
-    email: [null],
-    phonenumber: [null],
+    firstname: ['', Validators.required, Validators.maxLength(100)],
+    insertion: ['', Validators.maxLength(100)],
+    lastname: ['', Validators.required, Validators.maxLength(100)],
+    email: ['', Validators.required, Validators.email, Validators.maxLength(100)],
+    // tslint:disable-next-line:max-line-length
+    phonenumber: ['', Validators.required, Validators.minLength(10), Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(16)],
   });
   campaignID: number;
-  errors: any = null;
   participantDTO = new Participant();
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private participantService: ParticipantService, private router: Router,
               private quizComponent: QuizComponent,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private questionService: QuestionsService,
+              private toast: ToastrService) {
   }
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
-      this.campaignID = params.campaignID;
+      this.campaignID = params.id;
+      this.questionService.getCampaign(this.campaignID).subscribe(campaign => {
+        this.quizComponent.campaign = campaign;
+      },
+        error => {
+        console.log(error);
+        this.toast.error(error.valueOf().error.message, 'Campaign not found', {
+            timeOut: 60000
+          });
+        });
     });
   }
 
+  public formIsValid() {
+    const controls = this.loginForm.controls;
+    for (const name in controls) {
+      if (controls[name].invalid) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   onSubmit(participant: Participant) {
-    this.errors = null;
-    if (participant.email === null && participant.phonenumber === null) {
-      alert('U moet uw telefoonnummer of emailadres invullen');
-    } else {
+    console.log(participant);
+    if (this.formIsValid()) {
       this.callPost(participant);
     }
   }
 
   googleLogin() {
-    this.errors = null;
     this.authenticationService.doGoogleLogin().then(() => {
       this.createParticipantFromSocial();
       },
@@ -64,7 +86,6 @@ export class LoginComponent implements OnInit {
   }
 
   facebookLogin() {
-    this.errors = null;
     this.authenticationService.doFacebookLogin().then(() => {
         this.createParticipantFromSocial();
       },
@@ -93,13 +114,14 @@ export class LoginComponent implements OnInit {
   private callPost(participant: Participant) {
     this.participantService.postNewParticipant(participant, this.quizComponent.campaignID)
       .subscribe(succes => {
-          alert('Beste ' + participant.firstname + ' ' + ((isNull(participant.insertion)) ? '' : participant.insertion) +
+          this.toast.info('Beste ' + participant.firstname + ' ' + ((isNull(participant.insertion)) ? '' : participant.insertion) +
             '' + participant.lastname + ', succes met de quiz!');
           this.quizComponent.userUUID = succes.participantID;
           this.quizComponent.playCampaign(this.quizComponent.campaignID);
         },
         error => {
-          this.errors = error.valueOf().error;
+          this.toast.warning(error.valueOf().error.message);
+          console.log(error.valueOf().error.message);
         });
   }
 }
