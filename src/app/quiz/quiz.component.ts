@@ -36,7 +36,7 @@ export class QuizComponent {
       this.currentQuestion = this.campaign.questions[0];
     }, error => {
       console.log(error);
-      alert('Oeps! Er ging wat mis');
+      this.toast.info(error.valueOf().error.message);
     });
   }
 
@@ -52,9 +52,9 @@ export class QuizComponent {
   send() {
     this.endscreen = true;
     this.questionsService.postParticipantAnswers(this.campaignID, this.campaign)
-      .subscribe(succes =>  error => {
+      .subscribe(() => error => {
         console.error(error);
-        alert('Campagne kon niet worden opgeslagen.');
+        this.toast.info(error.valueOf().error.message);
       });
     this.message = 'Bedankt voor het meedoen aan ' + this.campaign.campaignName + '!';
     this.campaign = null;
