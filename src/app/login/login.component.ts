@@ -115,7 +115,7 @@ export class LoginComponent implements OnInit {
     this.participantService.postNewParticipant(participant, this.quizComponent.campaignID)
       .subscribe(succes => {
           this.toast.info('Beste ' + participant.firstname + ' ' + ((isNull(participant.insertion)) ? '' : participant.insertion) +
-            '' + participant.lastname + ', succes met de quiz!');
+            ' ' + participant.lastname + ', succes met de quiz!');
           this.quizComponent.userUUID = succes.participantID;
           this.quizComponent.playCampaign(this.quizComponent.campaignID);
         },
