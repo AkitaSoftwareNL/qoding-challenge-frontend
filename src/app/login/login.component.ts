@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { EventEmitter } from 'events';
 import { Participant } from '../../classes/participant';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -25,23 +25,35 @@ export class LoginComponent implements OnInit {
   @Output() participant = new EventEmitter<Participant>();
   loginWithoutSocial = null;
   routeSub: Subscription;
-  loginForm = this.formBuilder.group({
-    firstname: ['', Validators.required, Validators.maxLength(100)],
-    insertion: ['', Validators.maxLength(100)],
-    lastname: ['', Validators.required, Validators.maxLength(100)],
-    email: ['', Validators.required, Validators.email, Validators.maxLength(100)],
-    // tslint:disable-next-line:max-line-length
-    phonenumber: ['', Validators.required, Validators.minLength(10), Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(16)],
-  });
+  loginForm: FormGroup;
   campaignID: number;
   participantDTO = new Participant();
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
-    private participantService: ParticipantService, private router: Router,
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private participantService: ParticipantService,
+    private router: Router,
     private quizComponent: QuizComponent,
     private authenticationService: AuthenticationService,
     private questionService: QuestionsService,
-    private toast: ToastrService) {
+    private toast: ToastrService
+  ) {
+
+    this.loginForm = this.formBuilder.group({
+      firstname: ['',
+        [
+          Validators.required,
+          Validators.maxLength(100)
+        ]
+      ],
+      insertion: ['', Validators.maxLength(100)],
+      lastname: ['', [Validators.required, Validators.maxLength(100)]],
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
+      // tslint:disable-next-line:max-line-length
+      phonenumber: ['', [Validators.required, Validators.minLength(10), Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(16)]],
+    });
+
   }
 
   ngOnInit() {
