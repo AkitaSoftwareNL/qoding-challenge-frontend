@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
       },
         error => {
           console.log(error);
-          this.toast.error(error.valueOf().error.message, 'Campaign not found', {
+          this.toast.error(error.valueOf().error.message, 'Campagne niet beschikbaar', {
             timeOut: 60000
           });
         });
