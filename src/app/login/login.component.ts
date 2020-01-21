@@ -10,9 +10,7 @@ import { QuizComponent } from '../quiz/quiz.component';
 import { AuthenticationService } from '../../api/authentication.service';
 import 'rxjs-compat/add/observable/fromPromise';
 import { ToastrService } from 'ngx-toastr';
-import validate = WebAssembly.validate;
-import { QuestionsService } from "../../api/questionsService";
-import { timeout } from "rxjs/operators";
+import { QuestionsService } from '../../api/questionsService';
 
 @Component({
   selector: 'app-login',
@@ -121,7 +119,6 @@ export class LoginComponent implements OnInit {
         this.participantDTO.lastname = (name.length > 1) ? name[name.length - 1] : '';
         this.callPost(this.participantDTO);
       });
-
     });
   }
 
