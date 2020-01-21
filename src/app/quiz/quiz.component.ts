@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Question} from 'src/classes/question';
 import {QuestionsService} from 'src/api/questionsService';
 import {Campaign} from 'src/classes/campaign';
@@ -12,7 +12,6 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class QuizComponent {
   userUUID = '';
-  routeParams: Params;
   currentQuestionIndex = 0;
   currentQuestion: Question;
   campaign: Campaign;

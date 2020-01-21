@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import { Question } from 'src/classes/question';
-import { send } from "q";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Question} from 'src/classes/question';
 
 @Component({
   selector: 'app-multiple-choice-question',
