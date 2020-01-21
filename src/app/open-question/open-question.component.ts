@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Question} from 'src/classes/question';
 
 @Component({
@@ -7,15 +7,12 @@ import {Question} from 'src/classes/question';
   styleUrls: ['./open-question.component.css']
 })
 
-export class OpenQuestionComponent implements OnInit {
+export class OpenQuestionComponent {
   @Input() question: Question;
   @Input() questionIndex: number;
   @Output() notify = new EventEmitter();
   @ViewChild('input', {static: false}) textarea: ElementRef;
   constructor() { }
-
-  ngOnInit() {
-  }
 
   next() {
     this.notify.emit();

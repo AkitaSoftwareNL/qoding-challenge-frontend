@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Question} from 'src/classes/question';
 
 @Component({
@@ -6,7 +6,7 @@ import {Question} from 'src/classes/question';
   templateUrl: './program-question.component.html',
   styleUrls: ['./program-question.component.css']
 })
-export class ProgramQuestionComponent{
+export class ProgramQuestionComponent {
   @Input() question: Question;
   @Input() questionIndex: number;
   @Output() notify = new EventEmitter();

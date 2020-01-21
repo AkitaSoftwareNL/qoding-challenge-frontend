@@ -3,12 +3,12 @@
   color: var( --primary-text-color);
   display: flex;
   flex-direction: column;
-  padding: 1em 0em;
+  padding: 1em 0;
 }
 
 .app-multiple-choise-question>* {
   width: 100%;
-  margin: 0.5em 0em;
+  margin: 0.5em 0;
   padding: 1em 0;
   text-align: center;
   border: none;
@@ -39,10 +39,10 @@
 
 @media only screen and (max-width: 769px) {
   .app-multiple-choise-question {
-    padding: 0.25em 0em;
+    padding: 0.25em 0;
   }
   .app-multiple-choise-question>* {
-    margin: 0.25em 0em;
+    margin: 0.25em 0;
     padding: 0.5em 0;
   }
 }
