@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       lastname: ['', [Validators.required, Validators.maxLength(100)]],
       email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
       // tslint:disable-next-line:max-line-length
-      phonenumber: ['', [Validators.required, Validators.minLength(10), Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(16)]],
+      phonenumber: ['', [Validators.required, Validators.minLength(10), Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$'), Validators.maxLength(16)]],
     });
 
   }
