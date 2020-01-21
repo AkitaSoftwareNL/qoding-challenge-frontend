@@ -33,7 +33,7 @@
         </div>
         <div fxLayout fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
           <mat-form-field fxFlex="50%">
-            <input formControlName="phonenumber" matInput pattern="^[+]?[0-9]{9,12}$" placeholder="Telefoonnummer"
+            <input formControlName="phonenumber" matInput placeholder="Telefoonnummer"
               type="tel">
             <mat-error *ngIf="loginForm.controls['phonenumber'].errors">
               Voer een correct <strong>Telefoonnummer</strong> in
